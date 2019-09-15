@@ -47,7 +47,7 @@ export class Navigation extends Component {
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  **<NavLink tag={Link} to="/plantInfo">Plant Info</NavLink>**
+                  <NavLink tag={Link} to="/plantInfo"></NavLink>
                 </NavItem>
                 <UncontrolledDropdown nav inNavbar>
                   <DropdownToggle nav caret>
