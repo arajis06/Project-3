@@ -14,6 +14,8 @@ app.use(express.json());
 app.use(cors());
 
 const MONGODB_URI = process.env.MONGODB_URI || "'mongodb://localhost/bootcamp_hub'";
+//DB Config
+// const db = require("./config/keys").MONGODB_URI;
 //Connect to Mongo DB
 // mongoose.connect(MONGODB_URI);
     mongoose
