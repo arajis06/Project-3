@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+// const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -21,7 +21,7 @@ const MONGODB_URI = process.env.MONGODB_URI || "'mongodb://localhost/bootcamp_hu
         .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
-var Users = require ('./routes/Users');
+var Users = require ('./routes/UsersRoute');
 
 app.use('/users', Users);
 
