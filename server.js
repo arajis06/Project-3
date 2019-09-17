@@ -2,6 +2,9 @@ const express = require("express");
 const cors = require("cors");
 // const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
+const passport = require("passport");
+const users = require("./routes/api/users");
+
 
 const app = express();
 
@@ -23,9 +26,16 @@ const MONGODB_URI = process.env.MONGODB_URI || "'mongodb://localhost/bootcamp_hu
         .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
-var Users = require ('./routes/UsersRoute');
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
+// Routes
+app.use("/api/users", users);
 
-app.use('/users', Users);
+// var Users = require ('./routes/UsersRoute');
+
+// app.use('/users', Users);
 
 // Start the server
 app.listen(PORT, () => {
