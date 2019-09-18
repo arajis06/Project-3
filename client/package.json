@@ -1,5 +1,5 @@
 {
-  "name": "bootcamp_hub",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -27,7 +27,6 @@
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:3000",
-
   "eslintConfig": {
     "extends": "react-app"
   },
