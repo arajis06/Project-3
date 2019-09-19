@@ -7,7 +7,7 @@ const users = require("./routes/api/users");
 
 
 //=== Set Port ===//
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Initialize Express
 const app = express();
@@ -30,9 +30,9 @@ mongoose.connect(MONGODB_URI)
     .catch(err => console.log(err));
 
 //=== Passport middleware ===/
-app.use(passport.initialize());
-// Passport config
-require("./config/passport")(passport);
+// app.use(passport.initialize());
+// // Passport config
+// require("./config/passport")(passport);
 
 //=== Routes ===//
 app.use("/api/users", users);
