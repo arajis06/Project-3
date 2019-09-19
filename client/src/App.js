@@ -1,46 +1,57 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 // import './App.css';
-import Toolbar from "./Components/Toolbar/Toolbar";
-import SideDrawer from './Components/SideDrawer/SideDrawer';
-import Backdrop from './Components/Backdrop/Backdrop';
-import Login from './Components/Login/Login';
+
+import Toolbar from "./Components/Navigation//Toolbar/Toolbar";
+import Landing from "./Components/Landing/Landing";
+import SideDrawer from './Components/Navigation/SideDrawer/SideDrawer';
+import Backdrop from './Components/Navigation/Backdrop/Backdrop';
+import Register from "./Components/Auth/Register";
+import Login from "./Components/Auth/Login";
+// import Login from './Components/Login/Login';
 
 class App extends Component {
+  // Methods for components in the Navigation Directory=========================
   // set initial state
   state = {
     sideDrawerOpen: false
   };
-
+  //Previous state of the sidedrawer to control when to open
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
     });
   };
-
+  //Controls when the backdrop displays
   backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false})
+    this.setState({ sideDrawerOpen: false })
   };
-   render() {
+  render() {
     // let sideDrawer; //null
     let backdrop;
-
+    //backdrop will display when hamgurger is clicked to open sidedrawer
     if (this.state.sideDrawerOpen) {
       // sideDrawer = <SideDrawer />;
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
-
+    //========================================================================
     return (
-      <div style={{height: '100%'}}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-        <SideDrawer show={this.state.sideDrawerOpen} />
-        {backdrop}
-        <main style={{marginTop: '64px'}}>
-          <p>Page Content</p>
-          <Login />
-        </main>
+      <Router>
+        <div style={{ height: '100%' }}>
+          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+          <SideDrawer show={this.state.sideDrawerOpen} />
+          {backdrop}
+          {/* <Landing /> */}
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />        
+          
+          <main style={{ marginTop: '64px' }}>
+          </main>
 
-      </div>
-    ); 
+        </div>
+      </Router>
+    );
   }
 }
 export default App;
