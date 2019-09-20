@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import './App.css';
+// import { Provider } from "react-redux";
+// import store from "./store"
 
 import Toolbar from "./Components/Navigation//Toolbar/Toolbar";
 import Landing from "./Components/Landing/Landing";
@@ -9,6 +10,7 @@ import Backdrop from './Components/Navigation/Backdrop/Backdrop';
 import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
 // import Login from './Components/Login/Login';
+import './App.css';
 
 class App extends Component {
   // Methods for components in the Navigation Directory=========================
@@ -36,22 +38,23 @@ class App extends Component {
     }
     //========================================================================
     return (
-      <Router>
-        <div style={{ height: '100%' }}>
-          <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {/* <Landing /> */}
-          {backdrop}
-          
-          <main style={{ marginTop: '64px' }}  className="container main-container">
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/login" component={Login} />        
+      // <Provider store={store}>
+        <Router>
+          <div style={{ height: '100%' }}>
+            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+            <SideDrawer show={this.state.sideDrawerOpen} />
+            {/* <Landing /> */}
+            {backdrop}
+            
+            <main style={{ marginTop: '64px' }}  className="container main-container">
+            <Route exact path="/" component={Landing} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />        
+            </main>
 
-          </main>
-
-        </div>
-      </Router>
+          </div>
+        </Router>
+      // </Provider>
     );
   }
 }

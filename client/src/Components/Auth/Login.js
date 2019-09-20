@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Login.css";
+
+
 class Login extends Component {
   constructor() {
     super();
@@ -23,7 +26,7 @@ class Login extends Component {
   render() {
     const { errors } = this.state;
     return (
-      <div className="container reg-container">
+      <div className="container login-container">
         <div className="row">
           <div className="col-sm-12 ">
             <Link to="/" className="btn-flat waves-effect">
@@ -35,16 +38,16 @@ class Login extends Component {
 
         <div className="row">
           <div className="col-sm-12">
-            <div className="card reg-card">
+            <div className="card login-card">
               <div className="card-title">
                 <h4 style={{ textAlign: "center", padding: "20px" }}>
-                  <b>Register</b>
+                  <b>Login</b>
                 </h4>
                 <hr />
               </div>
               <div className="card-body">
                 <p className="grey-text text-darken-1">
-                  Already have an account? <Link to="/register">Register</Link>
+                  Don't have an account? <Link to="/register">Register</Link>
                 </p>
                 <form noValidate onSubmit={this.onSubmit}>
                   <div className="col mb-3">
