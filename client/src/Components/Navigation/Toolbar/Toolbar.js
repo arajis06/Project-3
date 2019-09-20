@@ -6,7 +6,8 @@ import './Toolbar.css';
 const Toolbar = props => (
 
     <header className="toolbar">
-        <nav className="toolbar-nav">
+        {/* Nav */}
+        <div className="toolbar-nav">
             <div className="toolbar-toggle-btn">
                 <DrawerToggleBtn click={props.drawerClickHandler} />
             </div>
@@ -16,13 +17,14 @@ const Toolbar = props => (
             <div className="spacer" />
             <div className="toolbar-nav-items">
                 <ul>
-                    <li><Link to="/">Home/</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/">Profile</Link></li>
                     <li><Link to="/">Resources</Link></li>
 
                 </ul>
             </div>
-        </nav>
+        </div>
+        {/* Nav */}
     </header>
 );
 

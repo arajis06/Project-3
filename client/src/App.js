@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import './App.css';
+import './App.css';
 
 import Toolbar from "./Components/Navigation//Toolbar/Toolbar";
 import Landing from "./Components/Landing/Landing";
@@ -40,13 +40,14 @@ class App extends Component {
         <div style={{ height: '100%' }}>
           <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
           {/* <Landing /> */}
+          {backdrop}
+          
+          <main style={{ marginTop: '64px' }}  className="container main-container">
           <Route exact path="/" component={Landing} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />        
-          
-          <main style={{ marginTop: '64px' }}>
+
           </main>
 
         </div>

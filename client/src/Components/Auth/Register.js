@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import "./Register.css";
 
 
 class Register extends Component {
@@ -13,97 +14,118 @@ class Register extends Component {
       errors: {}
     };
   }
-onChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+  onSubmit = e => {
     e.preventDefault();
-const newUser = {
+    const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
     };
-console.log(newUser);
+    console.log(newUser);
   };
-render() {
+  render() {
     const { errors } = this.state;
-return (
-      <div className="container">
+    return (
+      <div className="reg-container">
         <div className="row">
-          <div className="col s8 offset-s2">
+          <div className="col-sm-12 ">
             <Link to="/" className="btn-flat waves-effect">
-              <i className="material-icons left">keyboard_backspace</i> Back to
+              <i className="fa fa-arrow-left"></i> Back to
               home
             </Link>
-            <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-              <h4>
-                <b>Register</b> below
-              </h4>
-              <p className="grey-text text-darken-1">
-                Already have an account? <Link to="/login">Log in</Link>
-              </p>
-            </div>
-            <form noValidate onSubmit={this.onSubmit}>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.name}
-                  error={errors.name}
-                  id="name"
-                  type="text"
-                />
-                <label htmlFor="name">Name</label>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.email}
-                  error={errors.email}
-                  id="email"
-                  type="email"
-                />
-                <label htmlFor="email">Email</label>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password}
-                  error={errors.password}
-                  id="password"
-                  type="password"
-                />
-                <label htmlFor="password">Password</label>
-              </div>
-              <div className="input-field col s12">
-                <input
-                  onChange={this.onChange}
-                  value={this.state.password2}
-                  error={errors.password2}
-                  id="password2"
-                  type="password"
-                />
-                <label htmlFor="password2">Confirm Password</label>
-              </div>
-              <div className="col s12" style={{ paddingLeft: "11.250px" }}>
-                <button
-                  style={{
-                    width: "150px",
-                    borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
-                  }}
-                  type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
-                  Sign up
-                </button>
-              </div>
-            </form>
           </div>
-        </div>
-      </div>
-    );
-  }
-}
+            <div className="col-sm-12">
+              <div className="card reg-card">
+                <div className="card-title">
+                  <h4 style={{ textAlign:"center", padding:"20px" }}>
+                    <b>Register</b>
+                </h4>
+                <hr/>
+                </div>
+                <div className="card-body">
+                    <p className="grey-text text-darken-1">
+                      Already have an account? <Link to="/login">Log in</Link>
+                    </p>
+                    <form noValidate onSubmit={this.onSubmit}>
+                      <div className="col mb-3">
+                      <label htmlFor="email">Full Name</label>
+                        <input className="form-control" 
+                          // style={{
+                          //   width: "550px",
+                          //   borderRadius: "3px",
+                          //   letterSpacing: "1.5px",
+                          //   marginTop: "1rem"
+                          // }}
+                          onChange={this.onChange}
+                          value={this.state.name}
+                          error={errors.name}
+                          id="name"
+                          type="text"
+                        />
+                      </div>
+
+                      <div className="col mb-3">
+                      <label htmlFor="email">Email</label>
+                        <input className="form-control"
+                          onChange={this.onChange}
+                          value={this.state.email}
+                          error={errors.email}
+                          id="email"
+                          type="email"
+                        />
+                      </div>
+
+                      <div className="col mb-3">
+                      <label htmlFor="password">Password</label>
+                        <input className="form-control"
+                          onChange={this.onChange}
+                          value={this.state.password}
+                          error={errors.password}
+                          id="password"
+                          type="password"
+                        />
+                      </div>
+                      <div className="col mb-3">
+                      <label htmlFor="password2">Confirm Password</label>
+                        <input className="form-control"
+                          onChange={this.onChange}
+                          value={this.state.password2}
+                          error={errors.password2}
+                          id="password2"
+                          type="password"
+                        />
+                      </div>
+                      </form>
+                    </div>
+                    <hr />
+
+                  <div className="col-sm-12" style={{ paddingLeft: "11.250px" }}>
+                    <button
+                      style={{
+                        width: "150px",
+                        borderRadius: "3px",
+                        letterSpacing: "1.5px",
+                        marginTop: "1rem",
+                        marginBottom: "2rem",
+                        color: "white"
+                      }}
+                      type="submit"
+                      className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                    >
+                      Sign up
+                </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+          );
+        }
+      }
 export default Register;
