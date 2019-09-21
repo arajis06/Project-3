@@ -1,0 +1,23 @@
+.search-bar {
+  margin: 2rem;
+  background-color: #52175150;
+  height: 5rem;
+  border-radius: 10px;
+}
+input {
+  border: 1px solid #521751;
+  width: 25rem;
+  padding: 5px;
+  padding-left: 1rem;
+  border-radius: 10px;
+}
+label {
+  padding-right: 3rem;
+  font-size: 22px;
+  font-weight: 500;
+}
+.field {
+  padding-top: 1.5rem;
+  padding-left: 3rem;
+  align-content: center;
+}
