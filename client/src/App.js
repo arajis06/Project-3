@@ -1,58 +1,26 @@
-import React, { Component } from 'react';
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import SignIn from "./Pages/SignIn";
+import Resource from "./Pages/Resource";
+import Home from "./Pages/Home";
+// import Navbar from "./components/Navbar";
+// import Footer from "./components/Footer";
+// import Wrapper from "./components/Wrapper";
 
-import Toolbar from "./Components/Navigation//Toolbar/Toolbar";
-import Landing from "./Components/Landing/Landing";
-import SideDrawer from './Components/Navigation/SideDrawer/SideDrawer';
-import Backdrop from './Components/Navigation/Backdrop/Backdrop';
-import Register from "./Components/Auth/Register";
-import Login from "./Components/Auth/Login";
-// import Dashboard from "./Components/Dashboard/Dashboard";
-import './App.css';
+function App() {
+  return (
+    <Router>
+      <div>
+       
+          <Route exact path="/" component={Home} />
+          <Route exact path="/Signin" component={SignIn} />
+          <Route exact path="/resource" component={Resource} />
+          {/* <Route exact path="/discover" component={Discover} />
+          <Route exact path="/search" component={Search} /> */}
+        
+      </div>
+    </Router>
+  );
+        }
 
-
-class App extends Component {
-  // Methods for components in the Navigation Directory=========================
-  // set initial state
-  state = {
-    sideDrawerOpen: false
-  };
-  //Previous state of the sidedrawer to control when to open
-  drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return { sideDrawerOpen: !prevState.sideDrawerOpen };
-    });
-  };
-  //Controls when the backdrop displays
-  backdropClickHandler = () => {
-    this.setState({ sideDrawerOpen: false })
-  };
-  render() {
-    // let sideDrawer; //null
-    let backdrop;
-    //backdrop will display when hamgurger is clicked to open sidedrawer
-    if (this.state.sideDrawerOpen) {
-      // sideDrawer = <SideDrawer />;
-      backdrop = <Backdrop click={this.backdropClickHandler} />;
-    }
-    //========================================================================
-    return (
-        <Router>
-          <div style={{ height: '100%' }}>
-            <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-            <SideDrawer show={this.state.sideDrawerOpen} />
-            {/* <Landing /> */}
-            {backdrop}
-            
-            <main style={{ marginTop: '64px' }}  className="container main-container">
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            </main>
-
-          </div>
-        </Router>
-    );
-  }
-}
 export default App;
