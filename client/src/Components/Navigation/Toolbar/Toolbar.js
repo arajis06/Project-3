@@ -1,14 +1,19 @@
 import React from 'react';
 import DrawerToggleBtn from '../SideDrawer/DrawerToggleBtn';
+import { Link } from 'react-router-dom';
 import './Toolbar.css';
 
 const Toolbar = props => (
+
     <header className="toolbar">
-        <nav className="toolbar-nav">
+        {/* Nav */}
+        <div className="toolbar-nav">
             <div className="toolbar-toggle-btn">
                 <DrawerToggleBtn click={props.drawerClickHandler} />
             </div>
-            <div className="toolbar-logo"><a href="/">BootCamp[HUB] </a></div>
+            <div className="toolbar-logo">
+                <Link to="/">BootCamp[HUB] </Link>
+            </div>
             <div className="spacer" />
             <div className="toolbar-nav-items">
                 <ul>
@@ -18,7 +23,9 @@ const Toolbar = props => (
 
                 </ul>
             </div>
-        </nav>
+        </div>
+        {/* Nav */}
     </header>
 );
+
 export default Toolbar;

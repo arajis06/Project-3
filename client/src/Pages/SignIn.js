@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import './App.css';
-import Toolbar from "../Components/Toolbar/Toolbar";
-import SideDrawer from '../Components/SideDrawer/SideDrawer';
-import Backdrop from '../Components/Backdrop/Backdrop';
+import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
+import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
+import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
 import Login from '../Components/Login/Login';
 
 class SignIn extends Component {

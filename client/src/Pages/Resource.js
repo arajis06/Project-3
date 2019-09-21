@@ -1,5 +1,5 @@
 import React from 'react';
-import Toolbar from "../Components/Toolbar/Toolbar";
+import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import SearchBar from '../Components/Searchbar/Searchbar';
 import Youtube from '../Components/Youtube/Youtube';
 import VideoList from '../Components/VideoList/VideoList';
