@@ -5,12 +5,11 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const users = require("./routes/api/users");
 
+const resources = require("./routes/api/resources");
+
 
 //=== Set Port ===//
 const PORT = process.env.PORT || 3001;
-
-// Initialize Express
-const app = express();
 
 //=== Configure middleware ===//
 // Parse request body as JSON
@@ -38,14 +37,13 @@ mongoose.connect(MONGODB_URI)
 //=== Passport middleware ===//
 app.use(passport.initialize());
 // Passport config
-require("./config/passport")(passport);
-
-//=== Routes ===//
+// require("./config/passport")(passport);
+// Routes
 app.use("/api/users", users);
 
-//=== Routes ===//
-// app.use('/', require('./routes/index'));
-// app.use('/', require('./routes/api/users'));
+app.use("/api/create", resources);
+
+// var Users = require ('./routes/UsersRoute');
 
 
 // Start the server
