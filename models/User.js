@@ -5,14 +5,14 @@ const Schema = mongoose.Schema;
 
 // Schema constructor, to create a new UserSchema object
 const UserSchema = new Schema({
-    first_name: {
-        type: String,
-        required: true
+    name: {
+    type: String,
+    required: true
     },
-    last_name: {
-        type: String,
-        required: true
-    },
+    // last_name: {
+    //     type: String,
+    //     required: true
+    // },
     email: {
         type: String,
         required: true,
