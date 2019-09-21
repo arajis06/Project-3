@@ -1,46 +1,48 @@
 import React, { Component } from 'react';
-// import './App.css';
-import Toolbar from "./Components/Toolbar/Toolbar";
-import SideDrawer from './Components/SideDrawer/SideDrawer';
-import Backdrop from './Components/Backdrop/Backdrop';
-import Login from './Components/Login/Login';
+import './App.css';
+import Navigation from "./Components/Navigation";
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+  
+import { GoogleLoginButton, GithubLoginButton, FacebookLoginButton } from 'react-social-login-buttons';
 
 class App extends Component {
-  // set initial state
-  state = {
-    sideDrawerOpen: false
-  };
+  render() {
 
-  drawerToggleClickHandler = () => {
-    this.setState((prevState) => {
-      return {sideDrawerOpen: !prevState.sideDrawerOpen};
-    });
-  };
-
-  backdropClickHandler = () => {
-    this.setState({sideDrawerOpen: false})
-  };
-   render() {
-    // let sideDrawer; //null
-    let backdrop;
-
-    if (this.state.sideDrawerOpen) {
-      // sideDrawer = <SideDrawer />;
-      backdrop = <Backdrop click={this.backdropClickHandler} />;
-    }
-
-    return (
-      <div style={{height: '100%'}}>
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-        <SideDrawer show={this.state.sideDrawerOpen} />
-        {backdrop}
-        <main style={{marginTop: '64px'}}>
-          <p>Page Content</p>
-          <Login />
-        </main>
-
+    return(
+      <div className="row">
+        <main className="main-content col-lg-12 col-md-12 col-sm-12 p-0">
+          <Navigation/>
+      <Form className="login-form">
+        <h1>
+          <span className="font-weight-bold text-center">BootCamp</span>HUB
+        </h1>
+        <h2 className="text-center">Welcome</h2>
+        <FormGroup>
+          <Label>Email</Label>
+          <Input type="email" placeholder="Email"/>
+        </FormGroup>
+        <FormGroup>
+          <Label>Password</Label>
+          <Input type="password" placeholder="Password"/>
+        </FormGroup>
+        {/* App login BTN */}
+        <Button className="btn-lg btn-dark btn-block">Login</Button>
+        <div className="text-center pt-3">
+          Or sigin with:
+        </div>
+        {/* Social Login BTN */}
+        <GoogleLoginButton onClick={() => alert("Hello")} />
+        <GithubLoginButton onClick={() => alert("Hello")} />
+        <FacebookLoginButton classsName="mt-3 mb-3" />
+        <div className="text-center">
+          <a href="/create_account">Create an Account</a>
+          <span className="p-2">|</span>
+          <a href="/forgot_password">Forgot Password</a>
+        </div>
+      </Form>
+      </main>
       </div>
-    ); 
+    );
   }
 }
 export default App;
