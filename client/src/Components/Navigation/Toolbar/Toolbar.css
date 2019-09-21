@@ -1,0 +1,63 @@
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #521751;
+    height: 65px;
+    padding: 0 20px;
+}
+.toolbar-nav {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.toolbar-logo {
+    margin-left: 1rem;
+}
+.toolbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+/* adds space between logo ans nav-items */
+.spacer {
+    flex: 1;
+}
+.toolbar-nav-items ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+.toolbar-nav-items li {
+    padding: 0 0.5rem;
+}
+.toolbar-nav-items {
+    color: white;
+    text-decoration: none;
+}
+.toolbar-nav-items a {
+    color: white;
+}
+
+.toolbar-nav-items a:hover,
+.toolbar-nav-items a:active {
+    color:rgb(21, 216, 21);
+}
+/* removes nav-items from toolbar when in mobile mode */
+@media (max-width: 768px) {
+    .toolbar-nav-items {
+        display: none;
+    }
+}
+/* removes hamburger from toolbar when in desktop mode */
+@media (min-width: 769px) {
+    .toolbar-toggle-btn {
+        display: none;
+    }
+    .toolbar-logo {
+        margin-left: 0;
+    }
+}

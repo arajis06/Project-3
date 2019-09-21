@@ -1,0 +1,10 @@
+.reg-card {
+    margin-top: 50px;
+    /* width: 100%;*/
+}
+/* removes side-drawer from toolbar when in desktop mode */
+@media (min-width: 769px) {
+    .reg-card {
+        width: 60%;
+    }
+}
