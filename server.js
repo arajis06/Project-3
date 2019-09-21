@@ -14,7 +14,7 @@ const app = express();
 
 //=== Configure middleware ===//
 // Parse request body as JSON
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 // Serve up static assets (usually on heroku)
@@ -24,14 +24,20 @@ app.use(express.static("client/build"));
 
 //Cross-domain request
 app.use(cors());
-
+// DB config
+const db = require('./config/keys').MONGODB_URI;
 //=== Database Setup ===//
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub";
+// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub";
 
 //Connect to Mongo DB
-mongoose.connect(MONGODB_URI)
-    // mongoose
-    // .connect(MONGODB_URI, { useNewUrlParser: true })
+// mongoose.connect(MONGODB_URI)
+//     // mongoose
+//     // .connect(MONGODB_URI, { useNewUrlParser: true })
+//         .then(() => console.log("Connected to MongoDB"))
+//     .catch(err => console.log(err));
+// mongoose.connect(MONGODB_URI)
+    mongoose
+    .connect(db, { useNewUrlParser: true })
         .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
