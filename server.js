@@ -16,6 +16,12 @@ const app = express();
 // Parse request body as JSON
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+app.use(express.static("client/build"));
+}
+
 //Cross-domain request
 app.use(cors());
 
@@ -29,10 +35,10 @@ mongoose.connect(MONGODB_URI)
         .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
-//=== Passport middleware ===/
-// app.use(passport.initialize());
-// // Passport config
-// require("./config/passport")(passport);
+//=== Passport middleware ===//
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
 
 //=== Routes ===//
 app.use("/api/users", users);

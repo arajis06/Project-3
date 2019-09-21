@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-// import { Provider } from "react-redux";
-// import store from "./store"
 
 import Toolbar from "./Components/Navigation//Toolbar/Toolbar";
 import Landing from "./Components/Landing/Landing";
@@ -9,8 +7,9 @@ import SideDrawer from './Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from './Components/Navigation/Backdrop/Backdrop';
 import Register from "./Components/Auth/Register";
 import Login from "./Components/Auth/Login";
-// import Login from './Components/Login/Login';
+// import Dashboard from "./Components/Dashboard/Dashboard";
 import './App.css';
+
 
 class App extends Component {
   // Methods for components in the Navigation Directory=========================
@@ -38,7 +37,6 @@ class App extends Component {
     }
     //========================================================================
     return (
-      // <Provider store={store}>
         <Router>
           <div style={{ height: '100%' }}>
             <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -49,12 +47,11 @@ class App extends Component {
             <main style={{ marginTop: '64px' }}  className="container main-container">
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />        
+            <Route exact path="/login" component={Login} />
             </main>
 
           </div>
         </Router>
-      // </Provider>
     );
   }
 }

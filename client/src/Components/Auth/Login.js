@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { login } from './UserFunctions';
+// import axios from 'axios';
 import "./Login.css";
 
 
@@ -10,18 +12,28 @@ class Login extends Component {
       email: "",
       password: "",
       errors: {}
-    };
+    }
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+
   }
+
   onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
+
   onSubmit = e => {
     e.preventDefault();
     const userData = {
       email: this.state.email,
       password: this.state.password
-    };
+    }
     console.log(userData);
+    login(userData).then(res => {
+      if (res) {
+        this.props.history.push('/')
+      }
+    })
   };
   render() {
     const { errors } = this.state;
@@ -71,7 +83,8 @@ class Login extends Component {
                       type="password"
                     />
                   </div>
-                  <div className="col mb-3">
+
+                  {/* <div className="col mb-3">
                     <label htmlFor="password2">Confirm Password</label>
                     <input className="form-control"
                       onChange={this.onChange}
@@ -80,7 +93,7 @@ class Login extends Component {
                       id="password2"
                       type="password"
                     />
-                  </div>
+                  </div> */}
                 </form>
               </div>
               <hr />
@@ -98,7 +111,7 @@ class Login extends Component {
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
-                  Login
+                  Sign in
                   </button>
               </div>
             </div>
@@ -109,4 +122,5 @@ class Login extends Component {
     );
   }
 }
+
 export default Login;
