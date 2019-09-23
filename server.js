@@ -29,7 +29,7 @@ app.use(express.static("client/build"));
 // DB config
 // const db = require('./config/keys').MONGODB_URI;
 //=== Database Setup ===//
- const MONGODB_URI = process.env.MONGODB_URI || "mongodb://project3:project3@ds017678.mlab.com:17678/heroku_zb0s8d0f";
+ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://Project3:Project3@ds015710.mlab.com:15710/heroku_n0mq06s9";
 
 //Connect to Mongo DB
 //  mongoose.connect(MONGODB_URI);
