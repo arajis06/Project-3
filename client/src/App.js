@@ -8,25 +8,25 @@ import Home from "./Pages/Home";
 // import Wrapper from "./components/Wrapper";
 
 class App extends Component {
-  // state = {
-  //   message: "",
-  //   error: "",
-  //   eee: "",
-  //   text: "",
-  //   };
+  state = {
+    message: "",
+    error: "",
+    eee: "",
+    text: "",
+    };
 
-  //   componentDidMount = () => this.fetchAPIMessage();
+    componentDidMount = () => this.fetchAPIMessage();
 
-  //   fetchAPIMessage = async () => {
-  //     try{
-  //       const res = await fetch('api/message');
-  //       const { message } = await res.json();
+    fetchAPIMessage = async () => {
+      try{
+        const res = await fetch('api/message');
+        const { message } = await res.json();
 
-  //       this.setState({ message });
-  //     } catch (err) { 
-  //     console.error(err);
-  //     }
-  // };
+        this.setState({ message });
+      } catch (err) { 
+      console.error(err);
+      }
+  };
 
   render = () => (
     <Router>
