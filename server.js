@@ -1,13 +1,10 @@
 //=== Dependencies ===//
-require('dotenv').config();
-// const path = require('path');
 const express = require("express");
+const app = express();
 const cors = require("cors");  
 const mongoose = require("mongoose");
 const passport = require("passport");
-const users = require("./routes/api/users");
-
-const resources = require("./routes/api/resources");
+const routes = require("./routes");
 
 
 //=== Set Port ===//
@@ -26,12 +23,14 @@ app.use(express.static("client/build"));
 }
 
 // DB config
-const db = require('./config/keys').MONGODB_URI;
+// Alexis, do we need this next line?
+// const db = require('./config/keys').MONGODB_URI;
 //=== Database Setup ===//
-//  const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub;
+ const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub";
 
 //Connect to Mongo DB
-    mongoose.connect(db, { useNewUrlParser: true })
+// The following line used to be have "db" instead of "MONGODB_URI" - look above for db const
+    mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
         .then(() => console.log("Connected to MongoDB"))
         .catch(err => console.log(err));
     
@@ -39,18 +38,11 @@ const db = require('./config/keys').MONGODB_URI;
 app.use(passport.initialize());
 // Passport config
 // require("./config/passport")(passport);
+
 // Routes
-app.use("/api/users", users);
-
-app.use("/api/create", resources);
-
-// var Users = require ('./routes/UsersRoute');
-
+app.use(routes);
 
 // Start the server
 app.listen(PORT, () => {
     console.log("App running on port " + PORT + "!");
 });
-
-
-
