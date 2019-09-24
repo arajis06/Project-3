@@ -1,11 +1,10 @@
 //=== Dependencies ===//
 const express = require("express");
 const cors = require("cors");  
+const app = express();
 const mongoose = require("mongoose");
 const passport = require("passport");
-const users = require("./routes/api/users");
-
-const resources = require("./routes/api/resources");
+const routes = require("./routes");
 
 
 //=== Set Port ===//
@@ -39,17 +38,10 @@ app.use(passport.initialize());
 // Passport config
 // require("./config/passport")(passport);
 // Routes
-app.use("/api/users", users);
-
-app.use("/api/create", resources);
-
-// var Users = require ('./routes/UsersRoute');
+app.use(routes);
 
 
 // Start the server
 app.listen(PORT, () => {
     console.log("App running on port " + PORT + "!");
 });
-
-
-

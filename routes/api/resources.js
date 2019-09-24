@@ -1,15 +1,18 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const router = express.Router();
+const router = require("express").Router();
 
 // const Resource = require("../../models/Resource");
 const resourceController = require("../../controllers/resourceController");
 
-router.route("/create").post((req, res) => {
-  resourceController.create(req, res); 
-}); 
+// the real route will be "api/resources/"
+router.route("/")
+  .get(resourceController.findAll)
+  .post(resourceController.create);
 
-router.route("/resources")
-  .get(resourceController.findAll); 
+// Matches with "/api/resources/:id"
+// router
+//   .route("/:id")
+//   .get(resourceController.findById)
+//   .put(resourceController.update)
+//   .delete(resourceController.remove);
 
 module.exports = router;
