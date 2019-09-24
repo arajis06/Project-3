@@ -1,10 +1,11 @@
 //=== Dependencies ===//
+require('dotenv').config();
+// const path = require('path');
 const express = require("express");
 const cors = require("cors");  
 const mongoose = require("mongoose");
 const passport = require("passport");
 const users = require("./routes/api/users");
-
 
 //=== Set Port ===//
 const PORT = process.env.PORT || 3001;
@@ -16,6 +17,8 @@ const app = express();
 // Parse request body as JSON
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+//Cross-domain request
+app.use(cors());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -33,7 +36,7 @@ const db = require('./config/keys').MONGODB_URI;
     mongoose.connect(db, { useNewUrlParser: true })
         .then(() => console.log("Connected to MongoDB"))
         .catch(err => console.log(err));
-
+        
 //=== Passport middleware ===//
 app.use(passport.initialize());
 // Passport config
@@ -41,11 +44,6 @@ require("./config/passport")(passport);
 
 //=== Routes ===//
 app.use("/api/users", users);
-
-//=== Routes ===//
-// app.use('/', require('./routes/index'));
-// app.use('/', require('./routes/api/users'));
-
 
 // Start the server
 app.listen(PORT, () => {
