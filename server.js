@@ -30,16 +30,9 @@ const db = require('./config/keys').MONGODB_URI;
 // const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub";
 
 //Connect to Mongo DB
-// mongoose.connect(MONGODB_URI)
-//     // mongoose
-//     // .connect(MONGODB_URI, { useNewUrlParser: true })
-//         .then(() => console.log("Connected to MongoDB"))
-//     .catch(err => console.log(err));
-// mongoose.connect(MONGODB_URI)
-    mongoose
-    .connect(db, { useNewUrlParser: true })
+    mongoose.connect(db, { useNewUrlParser: true })
         .then(() => console.log("Connected to MongoDB"))
-    .catch(err => console.log(err));
+        .catch(err => console.log(err));
 
 //=== Passport middleware ===//
 app.use(passport.initialize());
