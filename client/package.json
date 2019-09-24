@@ -11,6 +11,7 @@
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
     "gh": "^1.17.5",
+    "http-proxy-middleware": "^0.20.0",
     "jwt-decode": "^2.2.0",
     "mdbootstrap": "^4.8.9",
     "pages": "0.0.16",
@@ -30,7 +31,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:3001",
   "eslintConfig": {
     "extends": "react-app"
   },
