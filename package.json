@@ -1,7 +1,6 @@
 {
   "name": "bootcamp_hub",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -32,5 +31,15 @@
     "passport-local": "^1.0.0",
     "validator": "^11.1.0",
     "yarn": "^1.17.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arajis06/Project-3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arajis06/Project-3/issues"
+  },
+  "homepage": "https://github.com/arajis06/Project-3#readme",
+  "description": ""
 }
