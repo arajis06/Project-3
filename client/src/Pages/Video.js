@@ -4,9 +4,9 @@ import SearchBar from '../Components/Searchbar/Searchbar';
 import Youtube from '../Components/Youtube/Youtube';
 import VideoList from '../Components/VideoList/VideoList';
 import VideoDetail from '../Components/VideoDetail/VideoDetail';
-import Container from "../Components/Container/Container"
-import Row from "../Components/Row/Row"
-import Col from "../Components/Col/Col"
+import Container from "../Components/Container/Container";
+import Row from "../Components/Row/Row";
+import Col from "../Components/Col/Col";
 
 class Video extends React.Component {
     state = {
@@ -69,5 +69,4 @@ class Video extends React.Component {
        )
     }
 }
-
 export default Video;

@@ -4,8 +4,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Schema constructor, to create a new UserSchema object
-const UserSchema = new Schema({
-    name: {
+const BlogSchema = new Schema({
+    topic: {
     type: String,
     required: true
     },
@@ -13,24 +13,42 @@ const UserSchema = new Schema({
     //     type: String,
     //     required: true
     // },
-    email: {
+    title: {
         type: String,
         required: true,
     },
-    password: {
+    article: {
         type: String,
         required: true,
     },
-    blog: [{ type: Schema.Types.ObjectId, ref: 'Blog' }],
-    // Set date when added to DB
+    name: {
+        type: String,
+        required: true
+        },
+    
     date: {
         type: Date,
         default: Date.now
     }
 });
 
+import mongoose, { Schema } from 'mongoose';
+
+const ReviewSchema = new Schema({
+  body: String,
+  username: String,
+  rating: Number,
+}, {
+  toJSON: {
+    virtuals: true,
+  },
+});
+
+const ReviewModel = mongoose.model('Review', ReviewSchema);
+export default ReviewModel;
+
 // This creates our model from the above schema, using mongoose's model method
-const User = mongoose.model("users", UserSchema);
+const Blog = mongoose.model("Blog", BlogSchema);
 
 // Export the Users model
-module.exports = User;
+module.exports = Blog;
