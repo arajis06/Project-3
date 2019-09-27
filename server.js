@@ -4,7 +4,8 @@ const app = express();
 const cors = require("cors");  
 const mongoose = require("mongoose");
 const passport = require("passport");
-const routes = require("./routes");
+// const routes = require("./routes");
+const users = require('./routes/users');
 
 
 //=== Set Port ===//
@@ -26,23 +27,29 @@ app.use(express.static("client/build"));
 app.use(cors());
 // DB config
 // Alexis, do we need this next line?
-const db = require('./config/keys').MONGODB_URI;
+// const db = require('./config/keys').MONGODB_URI;
 //=== Database Setup ===//
  const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bootcamp_hub";
 
 //Connect to Mongo DB
 // The following line used to be have "db" instead of "MONGODB_URI" - look above for db const
-    mongoose.connect(db, MONGODB_URI, { useNewUrlParser: true })
+    // mongoose.connect(db, { useNewUrlParser: true })
+    //     .then(() => console.log("Connected to MongoDB"))
+    //     .catch(err => console.log(err));
+
+    mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
         .then(() => console.log("Connected to MongoDB"))
         .catch(err => console.log(err));
-        
+
+
 //=== Passport middleware ===//
 app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
 // Routes
-app.use(routes);
+// app.use(routes);
+app.use("/users", users);
 
 // Start the server
 app.listen(PORT, () => {
