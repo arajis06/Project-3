@@ -1,28 +1,21 @@
 import React from 'react';
 import {Form, Button} from 'react-bootstrap';
+import axios from 'axios';
 import './PostArticle.css'
 
 class PostArticle extends React.Component {
 
-  formHandler(formFields) {
-
-    this.state = {
-      formFields: {name: '', topic:'', title:'', article:''}
-    }
-    axios.post('/post', formFields)
-      .then(function(response){
-        console.log(response);
-        //Perform action based on response
-    })
-      .catch(function(error){
-        console.log(error);
-        //Perform action based on error
-      });
-
+  constructor() {
+    super();
+     this.state = {
+       formFields: {name: ''}
+     }
+   };
+  
 
     render() {
         return(
-<Form  onsubmit={this.formHandler(this.state.formFields)}>
+<Form  onSubmit={this.formHandler(this.state.formFields)}>
 
   <Form.Group controlId="exampleForm.ControlInput1" name="topic">
     <Form.Label>Topic</Form.Label>
@@ -40,8 +33,24 @@ class PostArticle extends React.Component {
   <Button variant="outline-warning" itemID="submit">Submit</Button>
 </Form>
         )
-    }
+    };
+    formHandler(formFields) {
+
+      this.state = {
+        formFields: {name: '', topic:'', title:'', article:''}
+      }
+      axios.post('/post', formFields)
+        .then(function(response){
+          console.log(response);
+          //Perform action based on response
+      })
+        .catch(function(error){
+          console.log(error);
+          //Perform action based on error
+        });
+      };
   }
-}
+
 
 export default PostArticle;
+
