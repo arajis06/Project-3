@@ -1,7 +1,6 @@
 .reg-card {
     margin-top: 50px;
     /* width: 100%;*/
-    margin-left: 300px;
 }
 
 .container-fluid {
@@ -52,4 +51,10 @@
     .reg-card {
         width: 60%;
     }
+}
+
+.reg-container{
+    width: 700px;
+    height: 500px;
+    margin-left: 550px;
 }
