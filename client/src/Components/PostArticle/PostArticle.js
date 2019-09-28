@@ -36,7 +36,7 @@ class PostArticle extends React.Component {
     };
     formHandler(formFields) {
 
-      this.state = {
+      this.setState = {
         formFields: {name: '', topic:'', title:'', article:''}
       }
       axios.post('/post', formFields)
