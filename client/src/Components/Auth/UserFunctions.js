@@ -28,3 +28,18 @@ export const login = userData => {
     });
 }
 
+export const profileInfo = user => {
+    return axios
+    .put('api/users/profile', {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email
+    })
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+

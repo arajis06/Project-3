@@ -47,9 +47,10 @@ app.use(passport.initialize());
 // Passport config
 require("./config/passport")(passport);
 
-// Routes
+// ==== Routes ===//
+// app.use('/', require('./routes/index'));
 app.use(routes);
-// app.use("/users", users);
+// app.use("/users", routes);
 
 // Start the server
 app.listen(PORT, () => {

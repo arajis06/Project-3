@@ -5,7 +5,6 @@ import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
 import Login from '../Components/Auth/Login';
 import Register from '../Components/Auth/Register';
-import Profile from '../Components/Profile/Profile'
 
 class SignIn extends Component {
   // set initial state
@@ -40,7 +39,6 @@ class SignIn extends Component {
           <p></p>
           <Login />
           <Register />
-          <Profile />
         </main>
 
       </div>
