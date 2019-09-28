@@ -44,7 +44,7 @@ class Home extends Component {
             {/* <Landing /> */}
             {backdrop}
             
-            <main style={{ marginTop: '64px' }}  className="container main-container">
+            <main className="container-fluid">
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

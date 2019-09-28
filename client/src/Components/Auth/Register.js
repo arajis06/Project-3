@@ -125,10 +125,11 @@ class Register extends Component {
 
                       <button
                         type="submit"
-                        className="btn btn-lg btn-light-green" 
+                        className="btn btn-lg btn-default" 
                         style={{
                           color: "white",
-                          fontWeight: "bold"
+                          fontWeight: "bold",
+                          marginTop: "0px"
                         }}
                       >
                         Register

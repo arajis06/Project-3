@@ -42,7 +42,7 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="container login-container">
+      <div className="login-container">
         <div className="row">
           <div className="col-sm-12 ">
             <Link to="/" className="btn-flat waves-effect">
@@ -91,10 +91,11 @@ class Login extends Component {
 
                     <button
                       type="submit"
-                      className="btn btn-lg btn-light-green" 
+                      className="btn btn-lg btn-default" 
                       style={{
                         color: "white",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        marginTop: "0px"
                       }}
                   >
                       Login

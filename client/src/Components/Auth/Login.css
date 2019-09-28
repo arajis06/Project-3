@@ -1,6 +1,7 @@
 .login-card {
-    margin-top: 50px;
+    margin-top: 100px;
     /* width: 100%;*/
+    margin-left: 200px;
 }
 .reg-container {
     margin-left: 300px;
@@ -19,4 +20,45 @@
     .login-card {
         width: 60%;
     }
+
+    .toolbar {
+        display: none;
+    }
+}
+
+.login-container{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left:0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(124deg,#f5cec8, #fd8f8f, #fadf88, #f8faa4, #abf3b7, #97eef3, #9892f3, #f29cfa, #eb6ef7);
+    background-size: 1800% 1800%;
+  
+    -webkit-animation: rainbow 18s ease infinite;
+    -z-animation: rainbow 18s ease infinite;
+    -o-animation: rainbow 18s ease infinite;
+      animation: rainbow 18s ease infinite;}
+    
+    @-webkit-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-moz-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @-o-keyframes rainbow {
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
+    }
+    @keyframes rainbow { 
+        0%{background-position:0% 82%}
+        50%{background-position:100% 19%}
+        100%{background-position:0% 82%}
 }
