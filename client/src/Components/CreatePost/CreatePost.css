@@ -1,0 +1,7 @@
+.btn {
+  box-shadow: none;
+}
+.btn-outline-warning,
+.btn-outline-warning:hover {
+  box-shadow: none;
+}

@@ -1,6 +1,6 @@
 .search-bar {
   margin: 2rem;
-  background-color: #52175150;
+  background-color: #a543a31a;
   height: 5rem;
   border-radius: 10px;
 }
@@ -11,15 +11,14 @@ input {
   padding-left: 1rem;
   border-radius: 10px;
 }
-label {
-  padding-right: 3rem;
-  font-size: 22px;
+i {
+  padding-right: 2rem;
+  font-size: 19px;
   font-weight: 500;
+  color: #521751;
 }
 .field {
   padding-top: 1.5rem;
-  padding-left: 3rem;
-  align-content: center;
 }
 
 

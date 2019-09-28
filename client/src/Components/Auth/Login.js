@@ -30,7 +30,7 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password
     }
-    // console.log(userData);
+    console.log(userData);
 
     login(userData).then(res => {
       if (res) {

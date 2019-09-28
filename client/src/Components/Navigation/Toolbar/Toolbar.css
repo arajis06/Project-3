@@ -6,6 +6,7 @@
     background: #521751;
     height: 65px;
     padding: 0 20px;
+    z-index: 999999;
 }
 .toolbar-nav {
     display: flex;

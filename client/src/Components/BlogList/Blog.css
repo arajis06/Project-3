@@ -1,0 +1,13 @@
+span{
+    color: rgba(128, 128, 128, 0.479);
+    font-size: 14px;
+}
+.list-group-item{
+    font-family: Dosis, sans-serif;
+}
+.card{
+    box-shadow: none;
+}
+.list-group-item a{
+    color: black!important;
+}

@@ -1,14 +1,13 @@
 .landing-container {
     z-index: 100;
     position: fixed;
-    height: 100%;
     width: 100%;
-    left:0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: linear-gradient(124deg,#f5cec8, #fd8f8f, #fadf88, #f8faa4, #abf3b7, #97eef3, #9892f3, #f29cfa, #eb6ef7);
-    background-size: 1800% 1800%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(124deg,#f5cec8, #fd8f8f, #fadf88, #f8faa4, #abf3b7, #97eef3, #9892f3, #f29cfa, #eb6ef7);
+  background-size: 1800% 1800%;
   
     -webkit-animation: rainbow 18s ease infinite;
     -z-animation: rainbow 18s ease infinite;
