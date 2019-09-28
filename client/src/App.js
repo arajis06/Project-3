@@ -6,7 +6,6 @@ import Home from "./Pages/Home";
 // import Navbar from "./components/Navbar";
 // import Footer from "./components/Footer";
 // import Wrapper from "./components/Wrapper";
-
 class App extends Component {
 
   render = () => (
