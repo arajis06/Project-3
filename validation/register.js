@@ -1,3 +1,4 @@
+//STEP 2 VALID INPUT FIELDS IS CORRECT TO REGISTER
 const Validator = require("validator");
 const isEmpty = require("is-empty");
 

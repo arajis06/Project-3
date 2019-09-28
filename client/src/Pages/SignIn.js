@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
-import Login from '../Components/Login/Login';
+import Login from '../Components/Auth/Login';
+import Register from '../Components/Auth/Register';
 
 class SignIn extends Component {
   // set initial state
@@ -37,6 +38,7 @@ class SignIn extends Component {
         <main style={{marginTop: '64px'}}>
           <p></p>
           <Login />
+          <Register />
         </main>
 
       </div>
