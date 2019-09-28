@@ -21,6 +21,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    blog: [{ type: Schema.Types.ObjectId, ref: 'Blog' }],
     // Set date when added to DB
     date: {
         type: Date,
