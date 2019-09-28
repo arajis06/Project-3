@@ -2,6 +2,18 @@
     margin-top: 50px;
     /* width: 100%;*/
 }
+.reg-container {
+    margin-left: 300px;
+}
+.card-title {
+    background: rgb(114, 1, 114);
+    color: white;
+}
+.card label {
+    font-size: 16px;
+}
+
+
 /* removes side-drawer from toolbar when in desktop mode */
 @media (min-width: 769px) {
     .login-card {

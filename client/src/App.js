@@ -6,9 +6,7 @@ import Home from "./Pages/Home";
 import Video from "./Pages/Video";
 import Blog from "./Pages/Blog";
 import Post from "./Pages/Post";
-
-// import Profile from "./Pages/Profile";
-// import Footer from "./Components/Footer/Footer";
+import Profile from "./Pages/Profile";
 import './App.css';
 
 class App extends Component {
@@ -22,7 +20,7 @@ class App extends Component {
           <Route exact path="/video" component={Video} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/post" component={Post} />
-          {/* <Route exact path="/profile" component={Profile} /> */}
+          <Route exact path="/profile" component={Profile} />
          {/* <Footer /> */}
       </div>
     </Router>

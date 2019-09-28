@@ -1,5 +1,71 @@
 .landing {
     z-index: 100;
     position: fixed;
-    
 }
+    /* height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(124deg,#f5cec8, #fd8f8f, #fadf88, #f8faa4, #abf3b7, #97eef3, #9892f3, #f29cfa, #eb6ef7);
+  background-size: 1800% 1800%;
+  
+  -webkit-animation: rainbow 18s ease infinite;
+  -z-animation: rainbow 18s ease infinite;
+  -o-animation: rainbow 18s ease infinite;
+    animation: rainbow 18s ease infinite;
+
+​
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+​
+.btn{
+    margin-top: 0px;
+}
+​
+.navy{
+   background-color: rgb(88, 37, 146);
+   color: white;
+   padding-top: 50px;
+   
+}
+​
+.sphere {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 500%;
+    position: relative;
+    box-shadow: inset -10px -10px 100px #000, 10px 10px 20px black, inset 0px 0px 10px black;
+    display: inline-block;
+    margin: 5%;
+    font-size: 9mm;
+    margin-left: 455px;
+    margin-top: 100px
+}
+​
+.navy:after{
+    content: '[HUB]';
+    color: rgb(168, 252, 1)
+} */
