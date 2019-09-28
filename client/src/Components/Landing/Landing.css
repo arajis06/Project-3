@@ -56,7 +56,6 @@
     font-size: 500%;
     position: relative;
     box-shadow: inset -10px -10px 100px #000, 10px 10px 20px black, inset 0px 0px 10px black;
-    display: inline-block;
     margin: 5%;
     font-size: 9mm;
     margin-left: 650px;
@@ -67,4 +66,5 @@
 .sphere::after {
     content: '[HUB]';
     color: rgb(168, 252, 1);
+    display: block;
 }
