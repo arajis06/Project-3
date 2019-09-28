@@ -60,7 +60,6 @@ class Login extends Component {
                   <b>Login</b>
                 </h4>
               </div>
-              <hr />
               <div className="card-body">
                 <p className="grey-text text-darken-1">
                   Don't have an account? <Link to="/register">Register</Link>
@@ -90,14 +89,16 @@ class Login extends Component {
                     />
                   </div>
 
-                  <div className="col-sm-12" >
                     <button
                       type="submit"
-                      className="btn btn-lg btn-primary"
-                    >
+                      className="btn btn-lg btn-light-green" 
+                      style={{
+                        color: "white",
+                        fontWeight: "bold"
+                      }}
+                  >
                       Login
                     </button>
-                  </div>
                 </form>
 
               </div>

@@ -4,8 +4,8 @@ const app = express();
 const cors = require("cors");  
 const mongoose = require("mongoose");
 const passport = require("passport");
-// const routes = require("./routes");
-const users = require('./routes/users');
+const routes = require("./routes");
+// const users = require('./routes/api/users');
 
 
 //=== Set Port ===//
@@ -48,8 +48,8 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 // Routes
-// app.use(routes);
-app.use("/users", users);
+app.use(routes);
+// app.use("/users", users);
 
 // Start the server
 app.listen(PORT, () => {

@@ -6,7 +6,7 @@ const resources = require("./resources");
 // dem resource routes
 router.use("/resources", resources);
 // dem user routes
-// router.use("/users", users);
+router.use("/users", users);
 
 // For anything else, render the html page
 router.use(function(req, res) {
