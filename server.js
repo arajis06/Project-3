@@ -18,10 +18,6 @@ app.use(express.json());
 //Cross-domain request
 app.use(cors());
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-app.use(express.static("client/build"));
-}
 
 //Cross-domain request
 app.use(cors());
@@ -51,6 +47,13 @@ require("./config/passport")(passport);
 // app.use('/', require('./routes/index'));
 app.use(routes);
 // app.use("/users", routes);
+
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+    }
+    
 
 // Start the server
 app.listen(PORT, () => {
