@@ -1,9 +1,10 @@
 import React from 'react';
 import './Searchbar.css';
 
+
 class Searchbar extends React.Component {
     state = {
-        term: 'Java'
+        term: ''
     };
     handleChange = (event) => {
         this.setState({
@@ -15,17 +16,17 @@ class Searchbar extends React.Component {
         this.props.handleFormSubmit(this.state.term);
     }
 
-    render() {
-        return (
-            <div className='search-bar ui segment'>
-                <form onSubmit={this.handleSubmit} className='ui form'>
-                    <div className='field'>
-                        <label htmlFor="video-search">Search</label>
-                        <input onChange={this.handleChange} name='video-search' type="text" value={this.state.term}/>
-                    </div>
-                </form>
-            </div>
-        )
+        render() {
+            return (
+                <div className='search-bar ui segment'>
+                    <form onSubmit={this.handleSubmit} className='ui form'>
+                        <div className='field text-center'>
+                            <i class="fa fa-search"></i>
+                            <input onChange={this.handleChange} name='video-search' type="text" value={this.state.term} placeholder="Search here"/>
+                        </div>
+                    </form>
+                </div>
+            )
+        }
     }
-}
-export default Searchbar;
+    export default Searchbar;

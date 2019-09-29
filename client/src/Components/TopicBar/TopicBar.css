@@ -1,0 +1,9 @@
+.navbar{
+background-color: #a543a31a !important;
+border-radius: 10px !important;
+box-shadow: none;
+font-family: Dosis, sans-serif;
+}
+.nav-link{
+    color: #521751 !important;
+}

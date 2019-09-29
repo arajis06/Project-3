@@ -5,14 +5,14 @@ const Schema = mongoose.Schema;
 
 // Schema constructor, to create a new UserSchema object
 const UserSchema = new Schema({
-    name: {
+    first_name: {
     type: String,
     required: true
     },
-    // last_name: {
-    //     type: String,
-    //     required: true
-    // },
+    last_name: {
+        type: String,
+        required: true
+    },
     email: {
         type: String,
         required: true,
@@ -21,6 +21,7 @@ const UserSchema = new Schema({
         type: String,
         required: true,
     },
+    blog: [{ type: Schema.Types.ObjectId, ref: 'Blog' }],
     // Set date when added to DB
     date: {
         type: Date,
