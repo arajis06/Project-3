@@ -7,7 +7,7 @@ class Landing extends Component {
         return (
             // <div style={{ height: "75vh" }}>
             <div className="landing-container">
-                <div className="sphere navy">bootCamp</div>
+                <div className="sphere navy"></div>
                     <div className="row">
                                 <br />
                                 <div className="col-sm-12">

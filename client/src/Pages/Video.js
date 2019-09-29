@@ -1,5 +1,7 @@
 import React from 'react';
 import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
+import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
+import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
 import SearchBar from '../Components/Searchbar/Searchbar';
 import Youtube from '../Components/Youtube/Youtube';
 import VideoList from '../Components/VideoList/VideoList';
@@ -9,6 +11,20 @@ import Row from "../Components/Row/Row";
 import Col from "../Components/Col/Col";
 
 class Video extends React.Component {
+    state = {
+        sideDrawerOpen: false
+      };
+      //Previous state of the sidedrawer to control when to open
+      drawerToggleClickHandler = () => {
+        this.setState((prevState) => {
+          return { sideDrawerOpen: !prevState.sideDrawerOpen };
+        });
+      };
+      //Controls when the backdrop displays
+      backdropClickHandler = () => {
+        this.setState({ sideDrawerOpen: false })
+      }
+  
     state = {
         videos: [],
         selectedVideo: null
@@ -35,13 +51,18 @@ class Video extends React.Component {
 
 <Container style={{ marginTop: 30}}>
 <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+<SideDrawer show={this.state.sideDrawerOpen} />
+                        {Backdrop}
     <Row>
         <Col size="md-12"  style={{marginTop: '3em'}}>
         <SearchBar handleFormSubmit={this.handleSubmit}/>
         </Col>
-        <Col size="md-8" style={{marginTop:'2em'}}>
+        </Row>
+        <Row>
+        <Col size="md-8" style={{marginTop:'2em', overflow:'hidden'}}>
         <VideoDetail video={this.state.selectedVideo}/>
         </Col>
+        
         <Col size="md-4" style={{marginTop: '2em', float: 'right'}}>
         <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> 
         </Col>

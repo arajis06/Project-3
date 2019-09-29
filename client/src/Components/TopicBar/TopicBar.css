@@ -3,7 +3,16 @@ background-color: #a543a31a !important;
 border-radius: 10px !important;
 box-shadow: none;
 font-family: Dosis, sans-serif;
+width: auto;
+overflow: scroll!important;
+
 }
 .nav-link{
     color: #521751 !important;
+  
+}
+#item{
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    overflow: hidden !important;
 }
