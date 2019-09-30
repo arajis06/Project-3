@@ -5,7 +5,7 @@ import './TopicBar.css'
 class TopicBar extends React.Component {
   render() {
     return (
-      <Navbar className="TopicNav">
+      <Navbar className="TopicNav" id="style-2">
 
         <Nav className="mr-auto">
           <div id="item"><Nav.Link href="#">Software Engineering</Nav.Link></div>

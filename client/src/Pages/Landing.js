@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Toolbar from "../Components/Navigation//Toolbar/Toolbar";
+import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import Landing from "../Components/Landing/Landing";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
