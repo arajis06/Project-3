@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Toolbar from "../Components/Navigation//Toolbar/Toolbar";
+import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import Landing from "../Components/Landing/Landing";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
@@ -27,7 +27,8 @@ class Home extends Component {
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
   };
-  render() {
+    //========================================================================
+    render() {
     // let sideDrawer; //null
     let backdrop;
     //backdrop will display when hamgurger is clicked to open sidedrawer
@@ -35,7 +36,6 @@ class Home extends Component {
       // sideDrawer = <SideDrawer />;
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
-    //========================================================================
     return (
         <Router>
           <div style={{ height: '100%' }}>
