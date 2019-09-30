@@ -11,3 +11,7 @@ span{
 .list-group-item a{
     color: black!important;
 }
+
+.toolbar{
+    display: block;
+}

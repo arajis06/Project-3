@@ -62,3 +62,8 @@
         margin-left: 0;
     }
 }
+
+mark.limegreen {
+    color: rgb(168, 252, 1);
+    background: none;
+}

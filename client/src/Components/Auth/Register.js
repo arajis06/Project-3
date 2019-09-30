@@ -57,7 +57,7 @@ class Register extends Component {
               <div className="col-sm-12">
                 <div className="card reg-card">
                   <div className="card-title">
-                    <h4 style={{ textAlign: "center", padding: "20px" }}>
+                    <h4 style={{ textAlign: "center", padding: "10px" }}>
                       <b>Register</b>
                     </h4>
                   </div>
