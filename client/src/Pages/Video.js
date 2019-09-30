@@ -13,18 +13,18 @@ import Col from "../Components/Col/Col";
 class Video extends React.Component {
     state = {
         sideDrawerOpen: false
-      };
-      //Previous state of the sidedrawer to control when to open
-      drawerToggleClickHandler = () => {
+    };
+    //Previous state of the sidedrawer to control when to open
+    drawerToggleClickHandler = () => {
         this.setState((prevState) => {
-          return { sideDrawerOpen: !prevState.sideDrawerOpen };
+            return { sideDrawerOpen: !prevState.sideDrawerOpen };
         });
-      };
-      //Controls when the backdrop displays
-      backdropClickHandler = () => {
+    };
+    //Controls when the backdrop displays
+    backdropClickHandler = () => {
         this.setState({ sideDrawerOpen: false })
-      }
-  
+    };
+
     state = {
         videos: [],
         selectedVideo: null
@@ -43,51 +43,58 @@ class Video extends React.Component {
         })
     };
     handleVideoSelect = (video) => {
-        this.setState({selectedVideo: video})
+        this.setState({ selectedVideo: video })
     }
 
     render() {
+        // let sideDrawer; //null
+        let backdrop;
+
+        if (this.state.sideDrawerOpen) {
+            // sideDrawer = <SideDrawer />;
+            backdrop = <Backdrop click={this.backdropClickHandler} />;
+        }
         return (
 
-<Container style={{ marginTop: 30}}>
-<Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-<SideDrawer show={this.state.sideDrawerOpen} />
-                        {Backdrop}
-    <Row>
-        <Col size="md-12"  style={{marginTop: '3em'}}>
-        <SearchBar handleFormSubmit={this.handleSubmit}/>
-        </Col>
-        </Row>
-        <Row>
-        <Col size="md-8" style={{marginTop:'2em', overflow:'hidden'}}>
-        <VideoDetail video={this.state.selectedVideo}/>
-        </Col>
-        
-        <Col size="md-4" style={{marginTop: '2em', float: 'right'}}>
-        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/> 
-        </Col>
-    </Row>
-</Container>
-//             <div className="container">
-// <div className="row">
-//     <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-   
-//             <div className='ui container' style={{marginTop: '10em'}}>
-//                 <SearchBar handleFormSubmit={this.handleSubmit}/>
-//                 <div className='ui grid'>
-//                     <div className="ui row">
-//                         <div className="eleven wide column">
-//                             <VideoDetail video={this.state.selectedVideo}/>
-//                         </div>
-//                         <div className="five wide column">
-//                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//             </div>
-//             </div>
-       )
+            <Container style={{ marginTop: 30 }}>
+                <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+                <SideDrawer show={this.state.sideDrawerOpen} />
+                {backdrop}
+                <Row>
+                    <Col size="md-12" style={{ marginTop: '3em' }}>
+                        <SearchBar handleFormSubmit={this.handleSubmit} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col size="md-8" style={{ marginTop: '2em', overflow: 'hidden' }}>
+                        <VideoDetail video={this.state.selectedVideo} />
+                    </Col>
+
+                    <Col size="md-4" style={{ marginTop: '2em', float: 'right' }}>
+                        <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos} />
+                    </Col>
+                </Row>
+            </Container>
+            //             <div className="container">
+            // <div className="row">
+            //     <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+
+            //             <div className='ui container' style={{marginTop: '10em'}}>
+            //                 <SearchBar handleFormSubmit={this.handleSubmit}/>
+            //                 <div className='ui grid'>
+            //                     <div className="ui row">
+            //                         <div className="eleven wide column">
+            //                             <VideoDetail video={this.state.selectedVideo}/>
+            //                         </div>
+            //                         <div className="five wide column">
+            //                             <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
+            //                         </div>
+            //                     </div>
+            //                 </div>
+            //             </div>
+            //             </div>
+            //             </div>
+        )
     }
 }
 export default Video;

@@ -25,13 +25,20 @@ class Post extends React.Component {
     this.setState({ sideDrawerOpen: false })
   };
     render() {
+        // let sideDrawer; //null
+    let backdrop;
+
+    if (this.state.sideDrawerOpen) {
+      // sideDrawer = <SideDrawer />;
+      backdrop = <Backdrop click={this.backdropClickHandler} />;
+    }
         return (
             <Container>
                 <Row>
                     <Col size="md-12" style={{ marginTop: '3em' }}>
                         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                         <SideDrawer show={this.state.sideDrawerOpen} />
-                        {Backdrop}
+                        {backdrop}
                     </Col>
                     <Col size="md-12" style={{ marginTop: '5em' }}>
                         <h2 className="text-center" style={{fontFamily: "dosis, sans serif", fontSize: '40px', fontWeight: '600'}}>Create Article</h2>
