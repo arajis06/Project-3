@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { login } from './UserFunctions';
+import { loginUser } from './UserFunctions';
 // import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // import axios from 'axios';
 import "./Login.css";
@@ -13,12 +13,11 @@ class Login extends Component {
       email: "",
       password: "",
       errors: {}
-    }
+    };
 
     this.onChange = this.onChange.bind(this)
     this.onSubmit = this.onSubmit.bind(this)
   }
-
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
@@ -32,19 +31,25 @@ class Login extends Component {
     }
     console.log(userData);
 
-    login(userData).then(res => {
+    loginUser(userData).then(res => {
       if (res) {
         this.props.history.push('/profile')
       }
     })
   };
+
   render() {
     const { errors } = this.state;
 
     return (
       <div className="login-container">
         <div className="row">
-          <div className="col-sm-12 ">
+          <div className="col-md-12 ">
+            <h2 className="login-welcome text-center">Welcome Back</h2>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-md-12">
             <Link to="/" className="btn-flat waves-effect">
               <i className="fa fa-arrow-left"></i> Back to
               home
@@ -69,7 +74,12 @@ class Login extends Component {
 
                   <div className="form-group col mb-3">
                     <label htmlFor="email">Email</label>
-                    <input className="form-control"
+                    <span className="red-text">
+                      {errors.email}
+                      {errors.emailnotfound}
+                    </span>
+                    <input 
+                      className="form-control"
                       onChange={this.onChange}
                       value={this.state.email}
                       error={errors.email}
@@ -80,7 +90,12 @@ class Login extends Component {
 
                   <div className="form-group col mb-3">
                     <label htmlFor="password">Password</label>
-                    <input className="form-control"
+                    <span className="red-text">
+                      {errors.password}
+                      {errors.passwordincorrect}
+                    </span>
+                    <input 
+                      className="form-control"
                       onChange={this.onChange}
                       value={this.state.password}
                       error={errors.password}

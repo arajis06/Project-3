@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { register } from './UserFunctions';
+import { registerUser } from './UserFunctions';
 import "./Register.css";
 
 
@@ -34,7 +34,7 @@ class Register extends Component {
     }
     console.log(newUser);
 
-    register(newUser).then(res => {
+    registerUser(newUser).then(res => {
       this.props.history.push('/login')
     })
   };
