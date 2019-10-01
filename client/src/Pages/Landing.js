@@ -27,7 +27,8 @@ class Home extends Component {
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
   };
-  render() {
+    //========================================================================
+    render() {
     // let sideDrawer; //null
     let backdrop;
     //backdrop will display when hamgurger is clicked to open sidedrawer
@@ -35,7 +36,6 @@ class Home extends Component {
       // sideDrawer = <SideDrawer />;
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
-    //========================================================================
     return (
         <Router>
           <div style={{ height: '100%' }}>
