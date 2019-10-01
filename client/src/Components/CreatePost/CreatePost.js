@@ -2,7 +2,7 @@ import React from 'react';
 import {Button} from 'react-bootstrap';
 import './CreatePost.css'
 
-class BlogList extends React.Component {
+class CreatePost extends React.Component {
 
   
   render(){
@@ -11,4 +11,4 @@ class BlogList extends React.Component {
       )
   }  
 }
-export default BlogList;
+export default CreatePost;

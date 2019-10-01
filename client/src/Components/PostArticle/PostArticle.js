@@ -27,10 +27,10 @@ class PostArticle extends React.Component {
   </Form.Group>
 
   
-  <Form.Group controlId="exampleForm.ControlTextarea1"name="article">
+  <Form.Group controlId="exampleForm.ControlTextarea1" name="article">
     <Form.Control as="textarea" rows="20" />
   </Form.Group>
-  <Button variant="outline-warning" itemID="submit">Submit</Button>
+  <Button variant="outline-warning" type="submit">Submit</Button>
 </Form>
         )
     };
