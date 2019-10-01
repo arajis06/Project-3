@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
 import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
-import ProfileInfo from '../Components/ProfileInfo/ProfileInfo';
+import Profile from '../Components/Profile/Profile';
+// import jwt_decode from 'jwt-decode';
 
-
-class Profile extends React.Component {
+class Account extends Component {
   // set initial state
   state = {
-    sideDrawerOpen: false
+    sideDrawerOpen: false,
+
   };
+
+//   componentDidMount() {
+//     const token = localStorage.usertoken
+//     const decoded = jwt_decode(token)
+//     this.setState({
+//         first_name: decoded.first_name,
+//         last_name: decoded.last_name,
+//         email: decoded.email
+//     })
+// }
+
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -30,30 +43,21 @@ class Profile extends React.Component {
     }
 
         return (
+          <Router>
             <div className="container" style={{marginTop: '10em'}}>
                 <div className="row">
                     <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                     <SideDrawer show={this.state.sideDrawerOpen} />
                     {backdrop}
-                    <ProfileInfo />
-   
-            {/* <div className='ui container' style={{marginTop: '10em'}}>
-                <SearchBar handleFormSubmit={this.handleSubmit}/>
-                <div className='ui grid'>
-                    <div className="ui row">
-                        <div className="eleven wide column">
-                            <VideoDetail video={this.state.selectedVideo}/>
-                        </div>
-                        <div className="five wide column">
-                            <VideoList handleVideoSelect={this.handleVideoSelect} videos={this.state.videos}/>
-                        </div>
-                    </div>
+                    {/* <Route exact path="/account" component={Profile} /> */}
+
+                    <Profile/>
                 </div>
-            </div> */}
             </div>
-            </div>
+          </Router>
+
         )
     }
 }
 
-export default Profile;
+export default Account;

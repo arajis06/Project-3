@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { registerUser } from './UserFunctions';
+import { register } from './UserFunctions';
 import "./Register.css";
 
 
-class Register extends Component {
+class RegisterForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -34,7 +34,7 @@ class Register extends Component {
     }
     console.log(newUser);
 
-    registerUser(newUser).then(res => {
+    register(newUser).then(res => {
       this.props.history.push('/login')
     })
   };
@@ -144,4 +144,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default RegisterForm;

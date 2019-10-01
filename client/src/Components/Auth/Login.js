@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { loginUser } from './UserFunctions';
+import { login } from './UserFunctions';
 // import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // import axios from 'axios';
 import "./Login.css";
 
 
-class Login extends Component {
+class LoginForm extends Component {
   constructor() {
     super();
     this.state = {
@@ -31,9 +31,9 @@ class Login extends Component {
     }
     console.log(userData);
 
-    loginUser(userData).then(res => {
+    login(userData).then(res => {
       if (res) {
-        this.props.history.push('/profile')
+        this.props.history.push('/account')
       }
     })
   };
@@ -107,13 +107,6 @@ class Login extends Component {
                     <button
                       type="submit"
                       className="btn btn-lg btn-light-green" 
-                      // style={{
-                      //   color: "white",
-                      //   fontWeight: "bold",
-                      //   margin-right: 20%,
-                      //   width: 60%,
-                      //   margin-top: 20px
-                      // }}
                   >
                       Login
                     </button>
@@ -128,4 +121,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default LoginForm;
