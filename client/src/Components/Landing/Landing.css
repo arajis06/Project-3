@@ -2,9 +2,13 @@
     z-index: 100;
     position: fixed;
 }
-/* .btn-box {
-
-} */
+.btn {
+    margin-right: 20%;
+}
+.btn-box {
+    margin-top: 10%;
+    margin-left: 15%;
+}
     /* height: 100%;
   width: 100%;
   left:0;

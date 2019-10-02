@@ -6,8 +6,7 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const routes = require("./routes");
 const users = require('./routes/api/users');
-
-
+// const blog = require('./routes/api/blog');
 //=== Set Port ===//
 const PORT = process.env.PORT || 3001;
 
@@ -47,6 +46,8 @@ require("./config/passport")(passport);
 // app.use('/', require('./routes/index'));
 app.use(routes);
 app.use("/api/users", users);
+// app.use("/api/blog", blog);
+
 
 
 // Serve up static assets (usually on heroku)
@@ -56,11 +57,11 @@ if (process.env.NODE_ENV === "production") {
     
 
 // Start the server
-app.listen(PORT, () => {
-    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
-// Start the API server without shorthand
-// app.listen(PORT, function() {
+// app.listen(PORT, () => {
 //     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-//   });
+// });
+// Start the API server without shorthand
+app.listen(PORT, function() {
+    console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+  });
     

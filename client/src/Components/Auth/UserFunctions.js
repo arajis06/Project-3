@@ -23,7 +23,7 @@ export const login = userData => {
     });
 }
 
-export const profileInfo = user => {
+export const profile = user => {
     return axios
     .put('api/users/account', {
         first_name: user.first_name,

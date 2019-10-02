@@ -15,14 +15,15 @@ class RegisterForm extends Component {
       password2: "",
       errors: {}
     }
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  onChange = e => {
+  handleChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-  onSubmit = e => {
+  handleSubmit = e => {
+    console.log('A info was submitted: ' + this.state.value);
     e.preventDefault();
 
     const newUser = {
@@ -66,12 +67,12 @@ class RegisterForm extends Component {
                       Already have an account? <Link to="/login">Log in</Link>
                     </p>
 
-                  <form noValidate onSubmit={this.onSubmit}>
+                  <form noValidate onSubmit={this.handleSubmit}>
 
                     <div className="form-group col mb-3">
                       <label htmlFor="first_name">First Name</label>
                       <input className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         value={this.state.first_name}
                         error={errors.first_name}
                         id="first_name"
@@ -82,7 +83,7 @@ class RegisterForm extends Component {
                     <div className="form-group col mb-3">
                       <label htmlFor="last_name">Last Name</label>
                       <input className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         value={this.state.last_name}
                         error={errors.last_name}
                         id="last_name"
@@ -93,7 +94,7 @@ class RegisterForm extends Component {
                     <div className="form-group col mb-3">
                       <label htmlFor="email">Email</label>
                       <input className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         value={this.state.email}
                         error={errors.email}
                         id="email"
@@ -104,7 +105,7 @@ class RegisterForm extends Component {
                     <div className="form-group col mb-3">
                       <label htmlFor="password">Password</label>
                       <input className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         value={this.state.password}
                         error={errors.password}
                         id="password"
@@ -115,7 +116,7 @@ class RegisterForm extends Component {
                     <div className="form-group col mb-3">
                       <label htmlFor="password2">Confirm Password</label>
                       <input className="form-control"
-                        onChange={this.onChange}
+                        onChange={this.handleChange}
                         value={this.state.password2}
                         error={errors.password2}
                         id="password2"

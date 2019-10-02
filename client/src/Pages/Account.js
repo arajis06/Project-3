@@ -44,15 +44,13 @@ class Account extends Component {
 
         return (
           <Router>
-            <div className="container" style={{marginTop: '10em'}}>
-                <div className="row">
+            <div >
                     <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                     <SideDrawer show={this.state.sideDrawerOpen} />
                     {backdrop}
-                    {/* <Route exact path="/account" component={Profile} /> */}
-
-                    <Profile/>
-                </div>
+                    <div className="account-container">
+                    <Profile />
+                    </div>
             </div>
           </Router>
 

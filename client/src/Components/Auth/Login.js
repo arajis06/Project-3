@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router';
 import { Link } from "react-router-dom";
 import { login } from './UserFunctions';
 // import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
@@ -15,14 +16,15 @@ class LoginForm extends Component {
       errors: {}
     };
 
-    this.onChange = this.onChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
-  onChange = e => {
+  handleChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  onSubmit = e => {
+  handleSubmit = e => {
+    console.log('A info was submitted: ' + this.state.value);
     e.preventDefault();
 
     const userData = {
@@ -43,11 +45,6 @@ class LoginForm extends Component {
 
     return (
       <div className="container login-container">
-        <div className="row">
-          <div className="col-md-12 ">
-            <h2 className="login-welcome text-center">Welcome Back</h2>
-          </div>
-        </div>
         <div className="row">
           <div className="col-md-12">
             <Link to="/" className="btn-flat waves-effect">
@@ -70,7 +67,7 @@ class LoginForm extends Component {
                   Don't have an account? <Link to="/register">Register</Link>
                 </p>
 
-                <form noValidate onSubmit={this.onSubmit}>
+                <form noValidate onSubmit={this.handleSubmit}>
 
                   <div className="form-group col mb-3">
                     <label htmlFor="email">Email</label>
@@ -80,7 +77,7 @@ class LoginForm extends Component {
                     </span>
                     <input 
                       className="form-control"
-                      onChange={this.onChange}
+                      onChange={this.handleChange}
                       value={this.state.email}
                       error={errors.email}
                       id="email"
@@ -96,7 +93,7 @@ class LoginForm extends Component {
                     </span>
                     <input 
                       className="form-control"
-                      onChange={this.onChange}
+                      onChange={this.handleChange}
                       value={this.state.password}
                       error={errors.password}
                       id="password"
@@ -121,4 +118,4 @@ class LoginForm extends Component {
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
