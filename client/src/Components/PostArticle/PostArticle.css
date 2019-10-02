@@ -1,6 +1,7 @@
 button{
     float: right;
     width: 10rem;
+    font-family: dosis, sans serif;
 }
 .form-group{
     font-family: dosis, sans serif;

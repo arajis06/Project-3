@@ -11,7 +11,7 @@ const routes = require("./routes");
 //=== Set Port ===//
 const PORT = process.env.PORT || 3001;
 
-//=== Configure middleware ===//
+//=== Configure middleware ===//z
 // Parse request body as JSON
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());

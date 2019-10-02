@@ -34,7 +34,7 @@ class Video extends React.Component {
             params: {
                 q: termFromSearchBar,
                 part: 'snippet',
-                maxResults: 5,
+                maxResults: 4,
                 key: 'AIzaSyDJ8DkPft-HuKsbvQkK_LFBI6D7LvBcEFw'
             }
         })
