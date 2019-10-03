@@ -4,24 +4,27 @@ import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
 import Profile from '../Components/Profile/Profile';
-// import jwt_decode from 'jwt-decode';
+import jwt_decode from 'jwt-decode';
 
 class Account extends Component {
   // set initial state
   state = {
     sideDrawerOpen: false,
+    first_name: "",
+    last_name: "",
+    email: ""
 
   };
 
-//   componentDidMount() {
-//     const token = localStorage.usertoken
-//     const decoded = jwt_decode(token)
-//     this.setState({
-//         first_name: decoded.first_name,
-//         last_name: decoded.last_name,
-//         email: decoded.email
-//     })
-// }
+  componentDidMount() {
+    const token = localStorage.usertoken
+    const decoded = jwt_decode(token)
+    this.setState({
+        first_name: decoded.first_name,
+        last_name: decoded.last_name,
+        email: decoded.email
+    })
+}
 
 
   drawerToggleClickHandler = () => {
@@ -49,7 +52,7 @@ class Account extends Component {
                     <SideDrawer show={this.state.sideDrawerOpen} />
                     {backdrop}
                     <div className="account-container">
-                    <Profile />
+                    <Profile accountinfo={this.state}/>
                     </div>
             </div>
           </Router>
