@@ -2,6 +2,13 @@
     z-index: 100;
     position: fixed;
 }
+.btn {
+    margin-right: 20%;
+}
+.btn-box {
+    margin-top: 10%;
+    margin-left: 15%;
+}
     /* height: 100%;
   width: 100%;
   left:0;
@@ -10,13 +17,13 @@
   bottom: 0;
   background: linear-gradient(124deg,#f5cec8, #fd8f8f, #fadf88, #f8faa4, #abf3b7, #97eef3, #9892f3, #f29cfa, #eb6ef7);
   background-size: 1800% 1800%;
-  
+
   -webkit-animation: rainbow 18s ease infinite;
   -z-animation: rainbow 18s ease infinite;
   -o-animation: rainbow 18s ease infinite;
     animation: rainbow 18s ease infinite;
 
-​
+​}
 @-webkit-keyframes rainbow {
     0%{background-position:0% 82%}
     50%{background-position:100% 19%}
