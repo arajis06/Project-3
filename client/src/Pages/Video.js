@@ -3,12 +3,14 @@ import Toolbar from "../Components/Navigation/Toolbar/Toolbar";
 import SideDrawer from '../Components/Navigation/SideDrawer/SideDrawer';
 import Backdrop from '../Components/Navigation/Backdrop/Backdrop';
 import SearchBar from '../Components/Searchbar/Searchbar';
-import Youtube from '../Components/Youtube/Youtube';
+import Youtube from '../utils/Youtube';
 import VideoList from '../Components/VideoList/VideoList';
 import VideoDetail from '../Components/VideoDetail/VideoDetail';
 import Container from "../Components/Container/Container";
 import Row from "../Components/Row/Row";
 import Col from "../Components/Col/Col";
+
+const keys = require("../config/keys")
 
 class Video extends React.Component {
     state = {
@@ -35,7 +37,7 @@ class Video extends React.Component {
                 q: termFromSearchBar,
                 part: 'snippet',
                 maxResults: 4,
-                key: 'AIzaSyDJ8DkPft-HuKsbvQkK_LFBI6D7LvBcEFw'
+                key: keys.youtube_key
             }
         })
         this.setState({
