@@ -19,7 +19,7 @@ const Toolbar = props => (
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/account">Account</a></li>
-                    <li><a href="/resources">Resources</a></li>
+                    <li><a href="/resource">Resources</a></li>
 
                 </ul>
             </div>

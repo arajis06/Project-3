@@ -1,7 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
 const resources = require("./resources");
-// const blog = require("./blog");
+const blog = require("./blog");
 const users = require("./users");
 
 // dem resource routes
@@ -9,7 +9,7 @@ router.use("/resources", resources);
 // dem user routes
 router.use("/users", users);
 
-// router.use("/blog", blog);
+router.use("/blog", blog);
 
 // router.use("/profile", users);
 
