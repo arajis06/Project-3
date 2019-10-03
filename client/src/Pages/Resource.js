@@ -52,7 +52,7 @@ class Resource extends React.Component {
                                 <Card.Text>
                                     You can search what do you need to learn!
     </Card.Text>
-                                <Button variant="outline-warning" href="/video" style={{ float: 'right', boxShadow: 'none' }}>Videos</Button>
+                                <Button variant="outline-success" href="/video" style={{ float: 'right', boxShadow: 'none' }}>Videos</Button>
                             </Card.Body>
                         </Card>
 
@@ -67,7 +67,7 @@ class Resource extends React.Component {
                                 <Card.Text>
                                     You can search what do you need to learn!
     </Card.Text>
-                                <Button variant="outline-warning" href="/blog" style={{ float: 'right', boxShadow: 'none' }}>Blogs</Button>
+                                <Button variant="outline-success" href="/blog" style={{ float: 'right', boxShadow: 'none' }}>Blogs</Button>
                             </Card.Body>
                         </Card>
 

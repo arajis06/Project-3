@@ -7,3 +7,7 @@ button{
     font-family: dosis, sans serif;
     font-size: 25px;
 }
+.btn-outline-success,
+.btn-outline-success:hover {
+  box-shadow: none;
+}

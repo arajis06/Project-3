@@ -7,7 +7,7 @@ class CreatePost extends React.Component {
   
   render(){
       return(
-        <Button href="/post" variant="outline-warning" size='lg' block >Create Blog</Button>   
+        <Button href="/post" className="btn btn-outline-success" size='lg' block >Create Blog</Button>   
       )
   }  
 }

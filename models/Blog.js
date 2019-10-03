@@ -29,7 +29,7 @@ module.exports = Blog;
 
 
 // const blogSchema = new Schema({
-      
+
 //     title: {
 //         type: String,
 //         required: true,
@@ -46,7 +46,7 @@ module.exports = Blog;
 //         type: String,
 //         required: true,
 //     },
-    
+
 //     date: {
 //         type: Date,
 //         default: Date.now
