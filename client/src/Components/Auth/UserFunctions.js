@@ -1,20 +1,14 @@
 import axios from 'axios';
   
   
-export const registerUser = newUser => {
+export const register = newUser => {
     return axios
-    .post('api/users/register', {
-        first_name: newUser.first_name,
-        last_name: newUser.last_name,
-        email: newUser.email,
-        password: newUser.password,
-        password2: newUser.password2
-    })
+    .post('api/users/register', newUser)
     .then(res => {
         console.log('Registered!');
     });
 }
-export const loginUser = userData => {
+export const login = userData => {
     return axios
     .post('api/users/login', {
         email: userData.email,
@@ -29,9 +23,9 @@ export const loginUser = userData => {
     });
 }
 
-export const profileInfo = user => {
+export const profile = user => {
     return axios
-    .put('api/users/profile', {
+    .put('api/users/account', {
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email

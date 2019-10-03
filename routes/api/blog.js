@@ -29,7 +29,7 @@ const router = require("express").Router();
 const blogController = require("../../controllers/blogController");
 
 // the real route will be "api/resources/"
-router.route("/post")
+router.route("/")
   .get(blogController.findAll)
   .post(blogController.create);
 
