@@ -10,19 +10,22 @@ class Landing extends Component {
                 {/* <div className="sphere navy">bootCamp</div> */}
                 <div className="sphere navy">bootCamp</div>
                     <div className="row">
-                        <div className="col-sm-12">
-                            <div className="btn-box text-center" style={{marginTop: "10%",}}>
-                                <Link  to="/register"
-                                    style={{
-                                        fontSize: "18px",
-                                        color: "white",
-                                        fontWeight: "bold",
-                                        // width: "180px",
-                                        borderRadius: "3px",
-                                    }}
-                                    className="btn btn-md btn-secondary">
+                                <br />
+                                <div className="col-sm-12">
+                                <div className="btn-box text-center" style={{marginTop: "10%",}}>
+                                    <Link  to="/register"
+                                        style={{
+                                            fontSize: "18px",
+                                            color: "white",
+                                            fontWeight: "bold",
+                                            width: "180px",
+                                            borderRadius: "3px",
+                                            letterSpacing: "1.5px"
+                                        }}
+                                        
+                                        className="btn btn-lg btn-secondary">
                                         Register
-                                </Link>
+                                    </Link>
                                 
                                 {/* <div className="col-sm-12"> */}
                                     <Link to="/login"
@@ -30,11 +33,11 @@ class Landing extends Component {
                                             fontSize: "18px",
                                             color: "white",
                                             fontWeight: "bold",
-                                            // width: "180px",
+                                            width: "180px",
                                             borderRadius: "3px",
-                                            
+                                            letterSpacing: "1.5px"
                                         }}
-                                        className="btn btn-md btn-default">
+                                        className="btn btn-lg btn-default">
                                         Login
                                     </Link>
                                 </div>

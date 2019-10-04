@@ -1,22 +1,21 @@
 //STEP 3 IF INPUT FIELDS ARE VALID CHECK IF USER EXIST -THEN ROUTE
 const express = require("express");
 const router = express.Router();
-// const cors = require("cors");
+const cors = require("cors");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
 
 // Load User model
 const User = require("../../models/User");
-// concurrently
-// router.use(cors());
+router.use(cors());
 
 // REGISTER ROUTE
 router.post("/register", (req, res) => {
-  
     // Form validation
   const { errors, isValid } = validateRegisterInput(req.body);
   // Check validation
@@ -29,8 +28,7 @@ router.post("/register", (req, res) => {
   .then(user => {
       if (user) {
         return res.status(400).json({ email: "Email already exists" });
-      } 
-      else {
+      } else {
         const today = new Date()
         const newUser = new User({
           first_name: req.body.first_name,
@@ -43,20 +41,18 @@ router.post("/register", (req, res) => {
         bcrypt.genSalt(10, (err, salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
-            // Set password to hashed
             newUser.password = hash;
-            // User.create(newUser)
-            //   .then(user => {
-            //     res.json({status: user.email + 'registered!'})
-            //   })
-            //   .catch(err => {
-            //     res.send('error: ' + err)
-            //   })
-            newUser
-              .save()
-              .then(user => 
-                res.json(user)) 
-              .catch(err => console.log(err));
+            router.create(newUser)
+              .then(user => {
+                res.json({status: user.email + 'registered!'})
+              })
+              .catch(err => {
+                res.send('error: ' + err)
+              })
+            // newUser
+              // .save()
+              // .then(user => res.json(user))
+              // .catch(err => console.log(err));
           });
         });
       }
@@ -121,7 +117,7 @@ const { errors, isValid } = validateLoginInput(req.body);
 });
 
 //PROFILE
-router.get('/account', (req, res) => {
+router.get('/profile', (req, res) => {
   var decoded =jwt.verify(req.headers['authorization'], keys.secretOrKey)
 
   User.findOne({

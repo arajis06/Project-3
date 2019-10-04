@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
 import { Link } from "react-router-dom";
-import { login } from './UserFunctions';
+import { loginUser } from './UserFunctions';
 // import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 // import axios from 'axios';
 import "./Login.css";
 
 
-class LoginForm extends Component {
+class Login extends Component {
   constructor() {
     super();
     this.state = {
@@ -16,15 +15,14 @@ class LoginForm extends Component {
       errors: {}
     };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.onChange = this.onChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
   }
-  handleChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
-  handleSubmit = e => {
-    console.log('A info was submitted: ' + this.state.value);
+  onSubmit = e => {
     e.preventDefault();
 
     const userData = {
@@ -33,9 +31,9 @@ class LoginForm extends Component {
     }
     console.log(userData);
 
-    login(userData).then(res => {
+    loginUser(userData).then(res => {
       if (res) {
-        this.props.history.push('/account')
+        this.props.history.push('/profile')
       }
     })
   };
@@ -72,7 +70,7 @@ class LoginForm extends Component {
                   Don't have an account? <Link to="/register">Register</Link>
                 </p>
 
-                <form noValidate onSubmit={this.handleSubmit}>
+                <form noValidate onSubmit={this.onSubmit}>
 
                   <div className="form-group col mb-3">
                     <label htmlFor="email">Email</label>
@@ -82,7 +80,7 @@ class LoginForm extends Component {
                     </span>
                     <input 
                       className="form-control"
-                      onChange={this.handleChange}
+                      onChange={this.onChange}
                       value={this.state.email}
                       error={errors.email}
                       id="email"
@@ -98,7 +96,7 @@ class LoginForm extends Component {
                     </span>
                     <input 
                       className="form-control"
-                      onChange={this.handleChange}
+                      onChange={this.onChange}
                       value={this.state.password}
                       error={errors.password}
                       id="password"
@@ -128,4 +126,4 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default Login;
