@@ -8,7 +8,7 @@ import Blog from "./Pages/Blog";
 import Post from "./Pages/Post";
 import Profile from "./Pages/Profile";
 import './App.css';
-import { Widget } from 'react-chat-widget';
+import { Widget, } from 'react-chat-widget';
 import 'react-chat-widget/lib/styles.css';
 import './Components/Chat/chat.css';
 
