@@ -8,6 +8,10 @@ import Blog from "./Pages/Blog";
 import Post from "./Pages/Post";
 import Profile from "./Pages/Profile";
 import './App.css';
+import { Widget } from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
+import './Components/Chat/chat.css';
+
 
 class App extends Component {
 
@@ -22,6 +26,7 @@ class App extends Component {
           <Route exact path="/post" component={Post} />
           <Route exact path="/profile" component={Profile} />
          {/* <Footer /> */}
+          <Widget />
       </div>
     </Router>
   );

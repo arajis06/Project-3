@@ -1,0 +1,30 @@
+.rcw-conversation-container > .rcw-header {
+    background-color: #521751;
+}
+   
+.rcw-message > .rcw-response {
+    background-color: black;
+    color: white;
+}
+
+.rcw-launcher{
+    background-color: #521751;
+}
+
+.rcw-client{
+    background-color:#a543a31a;
+}
+
+.rcw-title::after{
+    content: ' coder!';
+}
+
+span {
+    color: #521751;
+}
+
+span::after{
+    content: 'How can I help?';
+    color: white;
+    padding-right: 122px
+}

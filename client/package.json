@@ -7,6 +7,8 @@
     "node": "10.15.3"
   },
   "dependencies": {
+    "@pusher/chatkit-client": "^1.13.1",
+    "@pusher/chatkit-server": "^2.1.1",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "classnames": "^2.2.6",
@@ -17,6 +19,7 @@
     "pages": "0.0.16",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.12",
+    "react-chat-widget": "^2.1.5",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.1",

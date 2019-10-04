@@ -45,7 +45,7 @@ class Login extends Component {
       <div className="login-container">
         <div className="row">
           <div className="col-md-12 ">
-            <h2 className="login-welcome text-center">Welcome Back</h2>
+            {/* <h2 className="login-welcome text-center">Welcome Back</h2> */}
           </div>
         </div>
         <div className="row">
