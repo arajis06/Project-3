@@ -8,11 +8,11 @@ class Landing extends Component {
             // <div style={{ height: "75vh" }}>
             <div className="landing-container">
                 {/* <div className="sphere navy">bootCamp</div> */}
-                <div className="sphere navy">bootCamp</div>
+                <div className="sphere navy" style={{marginLeft:"auto", marginRight:"auto"}}>bootCamp</div>
                     <div className="row">
                                 <br />
-                                <div className="col-sm-12">
-                                <div className="btn-box text-center" style={{marginTop: "10%",}}>
+                                <div className="col-sm-12" style={{marginLeft:"auto", marginRight:"auto"}}>
+                                <div className="btn-box text-center" style={{marginTop: "10%"}}>
                                     <Link  to="/register"
                                         style={{
                                             fontSize: "18px",
