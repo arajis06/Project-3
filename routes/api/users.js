@@ -120,8 +120,8 @@ const { errors, isValid } = validateLoginInput(req.body);
   })
 });
 
-//PROFILE
-router.get('/account', (req, res) => {
+//dashboard
+router.get('/dashboard', (req, res) => {
   var decoded =jwt.verify(req.headers['authorization'], keys.secretOrKey)
 
   User.findOne({

@@ -88,12 +88,13 @@ render() {
               <div className="col-md-12">
                 <div className="card dashboard-card">
                   <div className="card-body">
-                    <h4><b>HEY there,</b> {user.first_name.toUpperCase()} {user.last_name.toUpperCase()}
+                    <h4><b>HEY,</b> {user.first_name.toUpperCase()} {user.last_name.toUpperCase()}
                       <p className="flow-text grey-text text-darken-1">You are logged into {" "}
                         <span style={{ 
                           fontFamily: "monospace",
                           fontSize: "30px", 
                           color: "purple"
+                          
                           }}>bootCampHUB</span> 
                       </p>
                     </h4>

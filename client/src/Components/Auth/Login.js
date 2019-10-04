@@ -52,7 +52,7 @@ class LoginForm extends Component {
     this.props.loginUser(userData);
         console.log(userData);
 
-    // this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
     // loginUser(userData).then(res => {
     //   if (res) {
     //     this.props.history.push('/dashboard')
