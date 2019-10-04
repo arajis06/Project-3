@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router';
+// import { withRouter } from 'react-router';
 import { Link } from "react-router-dom";
-import { login } from './UserFunctions';
-// import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
-// import axios from 'axios';
+import { loginUser } from '../../actions/authActions';
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import classnames from "classnames";
 import "./Login.css";
 
 
@@ -16,28 +17,48 @@ class LoginForm extends Component {
       errors: {}
     };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    // this.handleChange = this.handleChange.bind(this)
+    // this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidUpdate(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard"); // push user to dashboard when they login
+    }
+// if (nextProps.errors) {
+//       this.setState({
+//         errors: nextProps.errors
+//       });
+//     }
+  }
+
+  componentDidMount() {
+    // If logged in and user navigates to Login page, should redirect them to dashboard
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
   }
   handleChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.id]: e.target.value});
   };
 
   handleSubmit = e => {
-    console.log('A info was submitted: ' + this.state.value);
     e.preventDefault();
 
     const userData = {
       email: this.state.email,
       password: this.state.password
     }
-    console.log(userData);
+    this.props.loginUser(userData);
+        console.log(userData);
 
-    login(userData).then(res => {
-      if (res) {
-        this.props.history.push('/account')
-      }
-    })
+    // this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
+    // loginUser(userData).then(res => {
+    //   if (res) {
+    //     this.props.history.push('/dashboard')
+    //   }
+    // })
+  
   };
 
   render() {
@@ -76,12 +97,14 @@ class LoginForm extends Component {
                       {errors.emailnotfound}
                     </span>
                     <input 
-                      className="form-control"
                       onChange={this.handleChange}
                       value={this.state.email}
                       error={errors.email}
                       id="email"
                       type="email"
+                      className={classnames("form-control", {
+                        invalid: errors.email || errors.emailnotfound
+                      })}
                     />
                   </div>
 
@@ -92,12 +115,14 @@ class LoginForm extends Component {
                       {errors.passwordincorrect}
                     </span>
                     <input 
-                      className="form-control"
                       onChange={this.handleChange}
                       value={this.state.password}
                       error={errors.password}
                       id="password"
                       type="password"
+                      className={classnames("form-control", {
+                        invalid: errors.password || errors.passwordincorrect
+                      })}
                     />
                   </div>
 
@@ -118,4 +143,16 @@ class LoginForm extends Component {
   }
 }
 
-export default withRouter(LoginForm);
+LoginForm.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(LoginForm);
