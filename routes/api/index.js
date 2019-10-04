@@ -1,17 +1,17 @@
 const path = require("path");
 const router = require("express").Router();
 const resources = require("./resources");
-// const users = require("../");
+const blog = require("./blog");
 const users = require("./users");
 
 // dem resource routes
 router.use("/resources", resources);
 // dem user routes
-router.use("/login", users);
+router.use("/users", users);
 
-router.use("/register", users);
+router.use("/blog", blog);
 
-router.use("/profile", users);
+// router.use("/profile", users);
 
 // For anything else, render the html page
 router.use(function(req, res) {
