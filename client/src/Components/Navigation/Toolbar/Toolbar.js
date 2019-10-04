@@ -12,15 +12,14 @@ const Toolbar = props => (
                 <DrawerToggleBtn click={props.drawerClickHandler} />
             </div>
             <div className="toolbar-logo">
-                <Link to="/">BootCamp[HUB] </Link>
+                <Link to="/">bootCamp[HUB] </Link>
             </div>
             <div className="spacer" />
             <div className="toolbar-nav-items">
                 <ul>
-                    <li><a href="/">Home</a></li>
+                    <li><a href="/dashboard">Home</a></li>
                     <li><a href="/account">Account</a></li>
                     <li><a href="/resource">Resources</a></li>
-
                 </ul>
             </div>
         </div>
