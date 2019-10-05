@@ -1,7 +1,13 @@
 button{
     float: right;
+    width: 10rem;
+    font-family: dosis, sans serif;
 }
 .form-group{
     font-family: dosis, sans serif;
     font-size: 25px;
+}
+.btn-outline-success,
+.btn-outline-success:hover {
+  box-shadow: none;
 }

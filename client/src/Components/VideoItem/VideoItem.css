@@ -7,4 +7,80 @@
 .video-item, .item{
     margin: 15px;
     float:right;
+    width: 90%;
+    padding-bottom: 22px;
+    border-bottom: 2px solid rgba(255, 200, 33, 100);
 }
+
+/* hr{
+    width: 400px;
+    margin-top: 0.5rem;
+    border-top: 2px solid rgba(255, 200, 33, 100)!important;
+  } */
+  div.header{
+      width: 90%;
+  }
+  img.image{
+    float: right;
+    width: 370px;
+    height: 200px;
+  }
+@media (min-width: 576px) {
+    img.image{
+      float: right;
+    }
+    div.header{
+      margin-bottom: 15px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      float: right;
+      max-width: 400px;
+    }
+    hr{
+      width: 400px;
+      max-width: 500px;
+      float: inline-end;
+      border-top: 2px double rgba(255, 200, 33, 100) ;
+    }
+    .video-item{
+        width:80%
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .video-item{
+        width:210px;
+    }
+    div.header{
+        width: 200px;
+    }
+    img.image{
+        width: 200px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .video-item{
+        width:260px;
+    }
+    div.header{
+        width: 260px;
+    }
+    img.image{
+        width: 260px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .video-item{
+        width: 300px;
+    }
+    div.header{
+        width: 300px;
+    }
+    img.image{
+        width: 300px;
+    }
+  }
+  

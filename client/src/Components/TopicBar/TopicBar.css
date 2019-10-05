@@ -1,9 +1,36 @@
 .navbar{
 background-color: #a543a31a !important;
-border-radius: 10px !important;
+/* border-radius: 10px !important; */
 box-shadow: none;
 font-family: Dosis, sans-serif;
+width: auto;
+overflow-x: scroll;
+
 }
 .nav-link{
     color: #521751 !important;
+  
+}
+#item{
+    white-space: nowrap!important;
+    text-overflow: ellipsis!important;
+    overflow: hidden !important;
+}
+#style-2::-webkit-scrollbar-track
+{
+	
+	/* border-radius: 10px; */
+	background-color: #a543a31a;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #a543a31a;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	/* border-radius: 10px; */
+	background-color: #521751;
 }

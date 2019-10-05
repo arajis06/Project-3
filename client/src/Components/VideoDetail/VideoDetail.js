@@ -4,7 +4,7 @@ import './VideoDetail.css';
 
 const VideoDetail = ({video}) => {
     if (!video) {
-        return <div className="loading text-center">Please make proper search </div>;
+        return <div className="loading text-center"> </div>;
     }
 
     const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;

@@ -12,7 +12,11 @@ import LandingHome from "./Pages/Landing";
 import Video from "./Pages/Video";
 import Blog from "./Pages/Blog";
 import Post from "./Pages/Post";
+
+import Articles from "./Pages/Articles";
+
 import PrivateRoute from "./Components/privateRoute/PrivateRoute";
+
 import Account from "./Pages/Account";
 import './App.css';
 import Dashboard from "./Components/Dashboard/Dashboard";
@@ -52,7 +56,11 @@ class App extends Component {
           <Route exact path="/video" component={Video} />
           <Route exact path="/blog" component={Blog} />
           <Route exact path="/post" component={Post} />
+
+          <Route exact path="/blog/:id" component={Articles} />
+         
           <Route exact path="/Account" component={Account} />
+
          {/* <Footer /> */}
       </div>
     </Router>

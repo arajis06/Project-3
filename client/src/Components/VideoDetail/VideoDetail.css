@@ -20,3 +20,24 @@ iframe {
     font-size: 20px;
     letter-spacing: 0.25rem;
 }
+ 
+/* @media only screen and (max-width: 576px) {
+ .wrap{
+   width: 80%
+ }
+ 
+}
+
+@media only screen and (max-width: 768px) {
+  .wrap{
+    width: 80%
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  
+}
+
+@media only screen and(max-width: 1200px) {
+  
+} */

@@ -6,10 +6,10 @@
 }
 input {
   border: 1px solid #521751;
-  width: 25rem;
   padding: 5px;
   padding-left: 1rem;
   border-radius: 10px;
+  width: 80%;
 }
 i {
   padding-right: 2rem;
@@ -19,4 +19,41 @@ i {
 }
 .field {
   padding-top: 1.5rem;
+}
+ 
+@media only screen and (max-width: 576px) {
+  .search-bar {
+    max-width: 540px;
+  }
+  input#searchInput{
+    width: 350px;
+  }
+ 
+}
+
+@media only screen and (max-width: 768px) {
+  .search-bar {
+    max-width: 720px;
+  }
+  input#searchInput{
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .search-bar {
+    max-width: 960px;
+  }
+  input#searchInput{
+    max-width: 750px;
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .search-bar {
+    max-width: 1140px;
+  }
+  input#searchInput{
+    max-width: 800px;
+  }
 }

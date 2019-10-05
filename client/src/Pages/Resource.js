@@ -11,7 +11,7 @@ import Col from "../Components/Col/Col";
 
 
 class Resource extends React.Component {
-      // Methods for components in the Navigation Directory=========================
+         // Methods for components in the Navigation Directory=========================
   // set initial state
   state = {
     sideDrawerOpen: false
@@ -25,17 +25,15 @@ class Resource extends React.Component {
   //Controls when the backdrop displays
   backdropClickHandler = () => {
     this.setState({ sideDrawerOpen: false })
-  };
-    //========================================================================
+  }
     render() {
-    // let sideDrawer; //null
+         // let sideDrawer; //null
     let backdrop;
-    //backdrop will display when hamgurger is clicked to open sidedrawer
+
     if (this.state.sideDrawerOpen) {
       // sideDrawer = <SideDrawer />;
       backdrop = <Backdrop click={this.backdropClickHandler} />;
     }
-
         return (
             <Container>
                 <Row>
@@ -43,7 +41,6 @@ class Resource extends React.Component {
                         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                         <SideDrawer show={this.state.sideDrawerOpen} />
                         {backdrop}
-
                     </Col>
                     <Col size="md-6" style={{ marginTop: '5em', float: 'left' }}>
                         <a href="/video"><h3 className="text-center" style={{ paddingBottom: '15px', color: '#521751', fontFamily: 'Dosis, sans-serif', fontWeight: '600', letterSpacing: '0.25rem', fontSize: '45px' }}>Video Resource</h3></a>
@@ -55,7 +52,7 @@ class Resource extends React.Component {
                                 <Card.Text>
                                     You can search what do you need to learn!
     </Card.Text>
-                                <Button variant="outline-warning" href="/video" style={{ float: 'right', boxShadow: 'none' }}>Videos</Button>
+                                <Button variant="outline-success" href="/video" style={{ float: 'right', boxShadow: 'none' }}>Videos</Button>
                             </Card.Body>
                         </Card>
 
@@ -70,7 +67,7 @@ class Resource extends React.Component {
                                 <Card.Text>
                                     You can search what do you need to learn!
     </Card.Text>
-                                <Button variant="outline-warning" href="/blog" style={{ float: 'right', boxShadow: 'none' }}>Blogs</Button>
+                                <Button variant="outline-success" href="/blog" style={{ float: 'right', boxShadow: 'none' }}>Blogs</Button>
                             </Card.Body>
                         </Card>
 

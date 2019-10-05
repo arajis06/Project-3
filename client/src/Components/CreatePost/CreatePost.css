@@ -1,7 +1,8 @@
 .btn {
   box-shadow: none;
+  font-family: dosis, sans serif;
 }
-.btn-outline-warning,
-.btn-outline-warning:hover {
+.btn-outline-success,
+.btn-outline-success:hover {
   box-shadow: none;
 }

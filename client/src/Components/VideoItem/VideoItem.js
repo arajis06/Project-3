@@ -3,7 +3,8 @@ import './VideoItem.css'
 
 const VideoItem = ({video , handleVideoSelect}) => {
     return (
-        <div onClick={ () => handleVideoSelect(video)} className=' video-item item'>
+        <div onClick={ () => handleVideoSelect(video)} className='video-item item'>
+            
             <div className='content'>
                 <div className='header '>{video.snippet.title}</div>
             </div>
