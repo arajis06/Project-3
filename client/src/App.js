@@ -20,6 +20,9 @@ import PrivateRoute from "./Components/privateRoute/PrivateRoute";
 import Account from "./Pages/Account";
 import './App.css';
 import Dashboard from "./Components/Dashboard/Dashboard";
+import { Widget, } from 'react-chat-widget';
+import 'react-chat-widget/lib/styles.css';
+import './Components/Chat/chat.css';
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -62,7 +65,8 @@ class App extends Component {
           <Route exact path="/Account" component={Account} />
 
          {/* <Footer /> */}
-      </div>
+         <Widget />      
+         </div>
     </Router>
   </Provider>    
   );

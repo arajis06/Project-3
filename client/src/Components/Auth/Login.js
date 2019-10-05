@@ -16,20 +16,19 @@ class LoginForm extends Component {
       password: "",
       errors: {}
     };
-
-    // this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidUpdate(nextProps) {
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      this.props.history.push("/dashboard"); // push user to dashboard when they login
+      nextProps.history.push("/dashboard"); // push user to dashboard when they login
+      return null
+    } 
+    if (nextProps.errors) {
+      return {
+        errors: nextProps.errors
+      }
     }
-// if (nextProps.errors) {
-//       this.setState({
-//         errors: nextProps.errors
-//       });
-//     }
+    return null
   }
 
   componentDidMount() {
@@ -50,15 +49,6 @@ class LoginForm extends Component {
       password: this.state.password
     }
     this.props.loginUser(userData);
-        console.log(userData);
-
-    this.props.loginUser(userData); // since we handle the redirect within our component, we don't need to pass in this.props.history as a parameter
-    // loginUser(userData).then(res => {
-    //   if (res) {
-    //     this.props.history.push('/dashboard')
-    //   }
-    // })
-  
   };
 
   render() {

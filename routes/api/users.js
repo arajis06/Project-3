@@ -120,22 +120,22 @@ const { errors, isValid } = validateLoginInput(req.body);
   })
 });
 
-//dashboard
-router.get('/dashboard', (req, res) => {
-  var decoded =jwt.verify(req.headers['authorization'], keys.secretOrKey)
+// //dashboard
+// router.get('/dashboard', (req, res) => {
+//   var decoded =jwt.verify(req.headers['authorization'], keys.secretOrKey)
 
-  User.findOne({
-    _id:decoded._id
-  })
-  .then(user => {
-    if(user) {
-      res.send("User does not exist")
-    }
-  })
-  .catch(err => {
-    res.send('error: ' + err)
-  })
-})
+//   User.findOne({
+//     _id:decoded._id
+//   })
+//   .then(user => {
+//     if(!user) {
+//       return res.status(404).json({ emailnotfound: "User not found" });
+//     }
+//   })
+//   .catch(err => {
+//     res.send('error: ' + err)
+//   })
+// })
 
 
   module.exports = router;
