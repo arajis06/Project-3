@@ -118,8 +118,12 @@ class LoginForm extends Component {
 
                     <button
                       type="submit"
-                      className="btn btn-lg btn-light-green" 
-                  >
+                      className="btn btn-lg btn-light-green"
+                      style={{
+                        color: "white",
+                        fontWeight: "bold"
+                      }}
+                    >
                       Login
                     </button>
                 </form>
