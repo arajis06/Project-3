@@ -19,15 +19,15 @@ class RegisterForm extends Component {
       password2: "",
       errors: {}
     };
-    // this.handleChange = this.handleChange.bind(this)
-    // this.handleSubmit = this.handleSubmit.bind(this)
   }
-  componentDidUpdate(nextProps) {
-    if (nextProps.errors) {
-      // this.setState({
-      //   errors: nextProps.errors
-      // });
+  
+  static getDerivedStateFromProps(props) {
+    if (props.errors) {
+      return {
+        errors: props.errors
+      }
     }
+    return null
   }
   componentDidMount() {
     // If logged in and user navigates to Register page, should redirect them to dashboard
