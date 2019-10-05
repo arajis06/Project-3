@@ -19,3 +19,11 @@
         width: 60%;
     }
 }
+@media (max-width: 768px) {
+    .reg-container {
+       margin-left: 0;
+    }
+    .reg-card {
+        margin-top: 0;
+    }
+}

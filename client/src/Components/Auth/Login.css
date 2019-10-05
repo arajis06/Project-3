@@ -31,3 +31,9 @@
         width: 60%;
     }
 }
+@media (max-width: 768px) {
+    .login-card {
+       margin-left: 0;
+    }
+   }
+   
